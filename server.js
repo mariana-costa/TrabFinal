@@ -48,5 +48,5 @@ app.get('/carochao', (request, response) => {
     //response.send(`<h1>Current time: </h1><p>${date}</p>`); //toString, pois caso contrário corro o risco de ele achar que isto é um objeto
 }); 
 
-app.listen(3000);//escuta a porta 3000, cada computador tem milhares de portas, não pode haver dois serviços a escutar uma porta
+app.listen(3300);//escuta a porta 3000, cada computador tem milhares de portas, não pode haver dois serviços a escutar uma porta
 //a porta continua a mesma para todas as rotas
