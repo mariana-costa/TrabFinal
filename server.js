@@ -12,7 +12,7 @@ app.use(express.static(__dirname + "/public")); //o dirname dá sempre o caminho
 app.get('/', (request, response) => {
     response.render('index.hbs', {
        title: "Welcome to this site!",
-       text: "Hello from the Express..."
+      
 
       /* var date = new Date().getHours().toString();
        console.log(date);
