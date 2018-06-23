@@ -68,7 +68,7 @@ app.get('/weather', (req, resp) => {
               console.log("It feels like: "+apparentTemperature);
               var tempo;
                  
-    resp.render('eco.hbs', {texto: "A temperatura no " + req.query.local + " é " + temperature});
+    resp.render('eco.hbs', {texto: req.query.local, texto2: "A temperatura é " + temperature, texto3: "A temperatura aparente é " + apparentTemperature, texto4: "A humidade é " + humidade, texto5: "A probabilidade de precipitação é " + precipitacao});
 
                  });
            });

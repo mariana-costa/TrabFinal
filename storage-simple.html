@@ -86,7 +86,7 @@
 
             if(shoppingList_string) {
               shoppingList = JSON.parse(shoppingList_string);
-            }
+            } //o item é um input do tipo texto
             shoppingList.push($("#item").val());
             localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
             console.log(localStorage);
