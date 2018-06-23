@@ -37,12 +37,7 @@ app.get('/', (request, response) => {
     //response.send(`<h1>Current time: </h1><p>${date}</p>`); //toString, pois caso contrário corro o risco de ele achar que isto é um objeto
   
 });
-app.get('/meteorology', (request, response) => {
-    response.render('meteorology.hbs', {
-       title: "Meteorology",
-      texto7: "Olá"
-    });
-});  
+
 app.get('/weather', (req, resp) => {
     var address = req.query.local;
     var encodedAddress = encodeURIComponent(address);
@@ -74,14 +69,36 @@ app.get('/weather', (req, resp) => {
               console.log("The temperature is: "+temperature);
               console.log("It feels like: "+apparentTemperature);
               console.log(formatted_address);
+              var sabHigh = DSbody.daily.data[0].temperatureMax;
+              var sabLow = DSbody.daily.data[0].temperatureMin;
+              var domHigh = DSbody.daily.data[1].temperatureMax;
+              var domLow = DSbody.daily.data[1].temperatureMin;
+              var segHigh = DSbody.daily.data[2].temperatureMax;
+              var segLow = DSbody.daily.data[2].temperatureMin;
+              var terHigh = DSbody.daily.data[3].temperatureMax;
+              var terLow = DSbody.daily.data[3].temperatureMin;
+              var quaHigh = DSbody.daily.data[4].temperatureMax;
+              var quaLow = DSbody.daily.data[4].temperatureMin;
+              var quiHigh = DSbody.daily.data[5].temperatureMax;
+              var quiLow = DSbody.daily.data[5].temperatureMin;
+              var sexHigh = DSbody.daily.data[6].temperatureMax;
+              var sexLow = DSbody.daily.data[6].temperatureMin;
+              //var dia2 = DSbody.daily.data[1];
+              //console.log(dia2);
               
                  
-    resp.render('eco.hbs', {texto: req.query.local, texto2: "A temperatura é " + temperature, texto3: "A temperatura aparente é " + apparentTemperature, texto4: "A humidade é " + humidade, texto5: "A probabilidade de precipitação é " + precipitacao});
+    resp.render('eco.hbs', {texto: req.query.local, texto2: "A temperatura é " + temperature, texto3: "A temperatura aparente é " + apparentTemperature, texto4: "A humidade é " + humidade, texto5: "A probabilidade de precipitação é " + precipitacao, texto8: req.query.local, 
+    texto9: sabHigh, texto10: sabLow, texto11: domHigh, texto12: domLow,  texto13: segHigh, texto14: segLow, texto15: terHigh, texto16: terLow, texto17: quaHigh, texto18: quaLow, texto19:quiHigh, texto20: quiLow, texto21: sexHigh, texto22: sexLow});
 
                  });
            });
 
     });
+    app.get('/meteorology', (request, response) => {
+        response.render('meteorology.hbs', {
+           title: "Meteorology"
+        });
+    });  
 
 //app.get('/sobre', (request, response) => {
 //  response.send({

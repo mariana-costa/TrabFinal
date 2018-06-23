@@ -12,22 +12,297 @@
             }
             h2{
                 font-family: Arial, Helvetica, sans-serif;
-                font-size: 20px;
+                font-size: 10px;
             }
              h3{
                 font-family: Arial, Helvetica, sans-serif;
-                font-size: 24px;
+                font-size: 14px;
                 color: blueviolet;
             }
         </style>
-    </head>
-    <body>
-        <h1>{{texto}}</h1>
-            <h2>{{texto2}}</h2>
-             <h2>{{texto3}}</h2>
-             <h2>{{texto4}}</h2>
-             <h2>{{texto5}}</h2>
-             <h3>Guarde este local nos seus locais favoritos!</h3>
+  
+         
+             	<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="keywords" content="Collective UI Kit Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //Meta-Tags -->
+
+	<!-- Custom-Stylesheet-Links -->
+		<link rel="stylesheet" href="css/style.css" 														type="text/css" media="all">
+		<link rel="stylesheet" href="css/clndr.css" 														type="text/css" media="all">
+		<link rel="stylesheet" href="css/acornmediaplayer.base.css" 										type="text/css" media="all">
+		<link rel="stylesheet" href="acornmediaplayer/acorn.access.css" 									type="text/css" media="all">
+		<link rel="stylesheet" href="css/audio.css" 														type="text/css" media="all">
+		<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" 		type="text/css" media="all">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" 	type="text/css" media="all">
+	<!-- //Custom-Stylesheet-Links -->
+
+	<!-- Web-Fonts -->
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" 		type="text/css" media="all">
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" 			type="text/css" media="all">
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100" 	type="text/css" media="all">
+	<!-- //Web-Fonts -->
+
+	<!-- Time-JavaScript -->
+		<script>
+			function startTime() {
+				var today = new Date();
+				var h = today.getHours();
+				var m = today.getMinutes();
+				var s = today.getSeconds();
+				m = checkTime(m);
+				s = checkTime(s);
+				document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+				var t = setTimeout(startTime, 500);
+			}
+			function checkTime(i) {
+				if (i < 10) {i = "0" + i};
+				return i;
+			}
+		</script>
+	<!-- //Time-JavaScript -->
+
+	<!-- Chart -->
+		<script src="js/Chart.js"></script>
+	<!-- //Chart -->
+
+</head>
+<!-- //Head -->
+
+
+
+	<!-- Body -->
+	<body onload="startTime()">
+		<h1>{{title}}</h1>
+	
+
+		<!-- Wrap -->
+		<div class="wrap agileits w3layouts">
+
+					
+
+
+			<!-- Vertical-Grids -->
+			<div class="vertical-grids agileits w3layouts">
+
+				<!-- Vertical-Grid-1 -->
+				<div class="vertical-grid vertical-grid-1 agileits w3layouts">
+
+					<!-- File-Upload-Widget -->
+					<div class="upload agileits w3layouts">
+						<div class="upload-form agileits w3layouts">
+							
+								<div>
+									 <h1>{{texto}}</h1>
+            <p>{{texto2}}</p>
+             <p>{{texto3}}</p>
+             <p>{{texto4}}</p>
+             <p>{{texto5}}</p>
+ <form action="/weather"><br>
+ <p>Procura por outro local!</p>
+         <input type="text" name="local" placeholder="260 Broadway, New York City, NY">
+         <button type="submit">Envia!</button> 
+        </form>
+          </div>
+		  </div>
+		  </div>
+					<!-- //File-Upload-Widget -->
+
+				</div>
+				<!-- //Vertical-Grid-1 -->
+
+
+
+				<!-- Vertical-Grid-2 -->
+				<div class="vertical-grid agileits w3layouts vertical-grid-2">
+
+					<!-- Current-Weather-Widget -->
+					<div class="weather-widget agileits w3layouts">
+						<div class="place agileits w3layouts">
+
+							<div class="city agileits w3layouts">
+								  <p>{{texto8}}</p>
+							</div>
+
+							<div class="dmy agileits w3layouts">
+								<script type="text/javascript">
+								var mydate=new Date()
+								var year=mydate.getYear()
+								if(year<1000)
+								year+=1900
+								var day=mydate.getDay()
+								var month=mydate.getMonth()
+								var daym=mydate.getDate()
+								if(daym<10)
+								daym="0"+daym
+								var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+								var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+								document.write(""+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"")
+								</script>
+							</div>
+
+							<div id="txt"></div>
+
+						</div>
+
+
+
+						<div class="weather-bottom agileits w3layouts">
+							<ul>
+								<li class="bg agileits w3layouts"><h4>SÁB</h4>
+																		<h5>{{texto9}}</h5>
+									<h6>{{texto10}}</h6>
+								</li>
+								<li><h4>DOM</h4>
+									
+									<h5>{{texto11}}</h5>
+									<h6>{{texto12}}</h6>
+								</li>
+								<li class="bg agileits w3layouts"><h4>SEG</h4>
+									
+									<h5>{{texto13}}</h5>
+									<h6>{{texto14}}</h6>
+								</li>
+								<li><h4>TER</h4>
+									
+									<h5>{{texto15}}</h5>
+									<h6>{{texto16}}</h6>
+								</li>
+								<li class="bg agileits w3layouts"><h4>QUA</h4>
+								
+									<h5>{{texto17}}</h5>
+									<h6>{{texto18}}</h6>
+								</li>
+                <li class="bg agileits w3layouts"><h4>QUI</h4>
+									<h5>{{texto19}}</h5>
+									<h6>{{texto20}}</h6>
+								</li>
+                <li class="bg agileits w3layouts"><h4>SEX</h4>
+									<h5>{{texto21}}</h5>
+									<h6>{{texto22}}</h6>
+								</li>
+                
+							</ul>
+							<div class="clear"> </div>
+						</div>
+					</div>
+					<!-- //Current-Weather-Widget -->
+
+
+		</div>
+		<!-- //Wrap -->
+
+
+
+		<!-- Copyright -->
+		<div class="copyright agileits w3layouts">
+			<p> &copy; 2016 Collective UI Kit. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank"> W3layouts </a></p>
+		</div>
+		<!-- //Copyright -->
+
+
+
+		<!-- Custom-JavaScript-File-Links -->
+
+			<!-- Default-JavaScript --> <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+
+			<!-- Slider-JavaScript -->
+				<script src="js/responsiveslides.min.js"></script>
+				<script>
+					$(function () {
+						$("#slider, #slider2").responsiveSlides({
+							auto: true,
+							nav: true,
+							speed: 1500,
+							namespace: "callbacks",
+							pager: true,
+						});
+					});
+				</script>
+			<!-- //Slider-JavaScript -->
+
+
+			<!-- File-Upload-Widget-JavaScript -->
+				<!-- JavaScript-Includes -->
+				<script src="js/jquery.knob.js"></script>
+				<!-- JavaScript Includes -->
+
+				<!-- jQuery-File-Upload-Dependencies -->
+				<script src="js/jquery.ui.widget.js"></script>
+				<script src="js/jquery.iframe-transport.js"></script>
+				<script src="js/jquery.fileupload.js"></script>
+				<!-- //jQuery-File-Upload-Dependencies -->
+
+				<!-- Main JavaScript file -->
+					<script src="js/script.js"></script>
+				<!-- Main JavaScript file -->
+			<!-- //File-Upload-Widget-JavaScript -->
+
+			<!-- Weather-Widget-JavaScript -->
+				<script src="js/skycons.js"></script>
+				<script>
+					var icons = new Skycons({"color": "#FFD700"}),
+					list  = [
+						"clear-day"
+					],
+					i;
+					for(i = list.length; i--; )
+					icons.set(list[i], list[i]);
+					icons.play();
+				</script>
+				<script>
+					var icons = new Skycons({"color": "#f5f5f5"}),
+					list = [
+						"clear-night", "partly-cloudy-day",	"partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind", "fog"
+					],
+					i;
+					for(i = list.length; i--; )
+					icons.set(list[i], list[i]);
+					icons.play();
+				</script>
+			<!--//Weather-Widget-JavaScript -->
+
+		
+			<!-- Calender-JavaScript -->
+				<script src="js/underscore-min.js"></script>
+				<script src= "js/moment-2.2.1.js"></script>
+				<script src="js/clndr.js"></script>
+				<script src="js/site.js"></script>
+			<!-- //Calender-JavaScript -->
+
+			<!-- Slide-To-Top JavaScript -->
+				<script type="text/javascript">
+					$(document).ready(function() {
+						var defaults = {
+							containerID: 'toTop',
+							containerHoverID: 'toTopHover',
+							scrollSpeed: 100,
+							easingType: 'linear',
+						};
+						$().UItoTop({ easingType: 'easeOutQuart' });
+					});
+				</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 0;"> </span></a>
+			<!-- //Slide-To-Top JavaScript -->
+
+			<!-- Smooth-Scrolling-JavaScript -->
+				<script type="text/javascript" src="js/move-top.js"></script>
+				<script type="text/javascript" src="js/easing.js"></script>
+				<script type="text/javascript">
+						jQuery(document).ready(function($) {
+							$(".scroll, .navbar li a, .footer li a").click(function(event){
+								$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+							});
+						});
+				</script>
+			<!-- //Smooth-Scrolling-JavaScript -->
+
+		<!-- //Custom-JavaScript-File-Links -->
+
+	
+    <h3>Guarde este local nos seus locais favoritos!</h3>
              <!--<form action="help.html"> --><button class="guardar">Guardar!</button><!--</form>-->
               <div class="container">
       <form method="post" class="form-horizontal">
@@ -110,6 +385,11 @@
       }
     });
     </script>
+       
     </body>
+    <footer>
+        Copyright Isabel Gonçalves and Mariana Braga - 2018 <!-- esta frase vai ficar em todas as paginas -->
+    </footer>
 
 </html>
+         
