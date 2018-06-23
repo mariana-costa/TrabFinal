@@ -78,7 +78,6 @@
 
 				<ul class="rslides" id="slider">
 					<li>
-<<<<<<< HEAD
 						<img src="images/img1.jpg">
 					</li>
 					<li>
@@ -92,21 +91,6 @@
 					</li>
 					<li>
 						<img src="images/img5.jpg">
-=======
-						<img src="images/img1.jpg" >
-					</li>
-					<li>
-						<img src="images/img2.jpg" >
-					</li>
-					<li>
-						<img src="images/img3.jpg" >
-					</li>
-					<li>
-						<img src="images/img4.jpg" >
-					</li>
-					<li>
-						<img src="images/img5.jpg" >
->>>>>>> c192e07efd959bc4f80aacf21403015b7bca8f46
 					</li>
 				</ul>
 
@@ -125,13 +109,20 @@
 						</div>
 					</li>
 					<li>
+						
+
 						<div class="item-container " style="width:120%" >
+							<form action="/weather">
 							<div class="item-top aits">Meteorology</div>
-							<div class="item-bottom w3l">Meteorology</div>
+							<div class="item-bottom w3l">
+								<button type="submit" style="background-color:black color:aqua">Meteorology</button>
+							</div>
+							</form>
 						</div>
+						
 					</li>
 					<li>
-						<div class="item-container" style="width:120%"">
+						<div class="item-container" style="width:120%">
 							<div class="item-top aits">About</div>
 							<div class="item-bottom w3l">About</div>
 						</div>
@@ -145,6 +136,7 @@
 	var age = document.getElementsByClassName("item-bottom w3l");
 var outro = document.getElementsByClassName("item-top aits");
 var ainda = document.getElementsByClassName("item-container");
+						
 if(age.value == 'Meteorology'){
 	age.onclick = function() {
     console.log('Click just happened')};
@@ -152,11 +144,13 @@ if(age.value == 'Meteorology'){
 if(outro.value == 'Meteorology'){
 	outro.onclick = function() {
     console.log('Click just happened')};
+	
 };
 if(ainda.value == 'Meteorology'){
 	ainda.onclick = function() {
     console.log('Click just happened')};
 };
+
 
 	</script>
 
