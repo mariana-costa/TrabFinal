@@ -71,13 +71,14 @@
 		</p>
 
 		<!-- Wrap -->
-		<div class="wrap agileits w3layouts">
+		<div class="wrap">
 
 			<!-- Slider -->
-			<div class="slider agileits w3layouts">
+			<div class="slider">
 
-				<ul class="rslides agileits w3layouts" id="slider">
+				<ul class="rslides" id="slider">
 					<li>
+<<<<<<< HEAD
 						<img src="images/img1.jpg">
 					</li>
 					<li>
@@ -91,6 +92,21 @@
 					</li>
 					<li>
 						<img src="images/img5.jpg">
+=======
+						<img src="images/img1.jpg" >
+					</li>
+					<li>
+						<img src="images/img2.jpg" >
+					</li>
+					<li>
+						<img src="images/img3.jpg" >
+					</li>
+					<li>
+						<img src="images/img4.jpg" >
+					</li>
+					<li>
+						<img src="images/img5.jpg" >
+>>>>>>> c192e07efd959bc4f80aacf21403015b7bca8f46
 					</li>
 				</ul>
 
@@ -103,19 +119,19 @@
 			<nav>
 				<ul>
 					<li>
-						<div class="item-container agileits w3layouts" style="width:120%">
+						<div class="item-container" style="width:120%">
 							<div class="item-top aits">Home</div>
 							<div class="item-bottom w3l">Home</div>
 						</div>
 					</li>
 					<li>
-						<div class="item-container agileits w3layouts" style="width:120%" >
+						<div class="item-container " style="width:120%" >
 							<div class="item-top aits">Meteorology</div>
 							<div class="item-bottom w3l">Meteorology</div>
 						</div>
 					</li>
 					<li>
-						<div class="item-container agileits w3layouts style="width:120%"">
+						<div class="item-container" style="width:120%"">
 							<div class="item-top aits">About</div>
 							<div class="item-bottom w3l">About</div>
 						</div>
@@ -128,7 +144,7 @@
 
 	var age = document.getElementsByClassName("item-bottom w3l");
 var outro = document.getElementsByClassName("item-top aits");
-var ainda = document.getElementsByClassName("item-container agileits w3layouts");
+var ainda = document.getElementsByClassName("item-container");
 if(age.value == 'Meteorology'){
 	age.onclick = function() {
     console.log('Click just happened')};
@@ -146,46 +162,46 @@ if(ainda.value == 'Meteorology'){
 
 
 			<!-- Vertical-Grids -->
-			<div class="vertical-grids agileits w3layouts">
+			<div class="vertical-grids">
 
 				<!-- Vertical-Grid-1 -->
-				<div class="vertical-grid vertical-grid-1 agileits w3layouts">
+				<div class="vertical-grid-1">
 
 					<!-- File-Upload-Widget -->
-					<div class="upload agileits w3layouts">
-						<div class="upload-form agileits w3layouts">
+					<div class="upload">
+						<div class="upload-form w3layouts">
 							
 								<div>
 									
- <form action="/weather">
- <p>Escreve a morada</p>
-         <input type="text" name="local" placeholder="260 Broadway, New York City, NY">
-         <button type="submit">Envia!</button> 
-        </form>
-          </div>
-		  </div>
+ 					<form action="/weather">
+ 						<p>Escreve a morada</p>
+        					 <input type="text" name="local" placeholder="260 Broadway, New York City, NY">
+         						<button type="submit">Envia!</button> 
+       				 </form>
+         		 </div>
+		 	 </div>
 		  </div>
 					<!-- //File-Upload-Widget -->
 
 
 
 					<!-- Calender-Widget -->
-					<div class="calender agileits w3layouts">
+					<div class="calender">
 
-						<div class="cal1 agileits w3layouts">
-							<div class="clndr agileits w3layouts">
+						<div class="cal1">
+							<div class="clndr">
 
-								<table class="clndr-table agileits w3layouts" border="0" cellspacing="0" cellpadding="0">
+								<table class="clndr-table" border="0" cellspacing="0" cellpadding="0">
 
 									<thead>
-										<tr class="header-days agileits w3layouts">
-											<td class="header-day aits w3l">S</td>
-											<td class="header-day agileits w3layouts">M</td>
-											<td class="header-day agileits w3l">T</td>
-											<td class="header-day w3layouts aits">W</td>
-											<td class="header-day aits agileits">T</td>
-											<td class="header-day w3l w3layouts">F</td>
-											<td class="header-day agileits w3layouts">S</td>
+										<tr class="header-days">
+											<td class="header-day">S</td>
+											<td class="header-day">M</td>
+											<td class="header-day">T</td>
+											<td class="header-day">W</td>
+											<td class="header-day">T</td>
+											<td class="header-day">F</td>
+											<td class="header-day">S</td>
 										</tr>
 									</thead>
 
@@ -327,17 +343,17 @@ if(ainda.value == 'Meteorology'){
 
 
 				<!-- Vertical-Grid-2 -->
-				<div class="vertical-grid agileits w3layouts vertical-grid-2">
+				<div class="vertical-grid-2">
 
 					<!-- Current-Weather-Widget -->
-					<div class="weather-widget agileits w3layouts">
-						<div class="place agileits w3layouts">
+					<div class="weather-widget">
+						<div class="place">
 
-							<div class="city agileits w3layouts">
+							<div class="city">
 								  <p>{{texto7}}</p>
 							</div>
 
-							<div class="dmy agileits w3layouts">
+							<div class="dmy">
 								<script type="text/javascript">
 								var mydate=new Date()
 								var year=mydate.getYear()
@@ -360,7 +376,7 @@ if(ainda.value == 'Meteorology'){
 
 
 
-						<div class="weather-bottom agileits w3layouts">
+						<div class="weather-bottom">
 							<ul>
 								<li class="bg agileits w3layouts"><h4>FRI</h4>
 									<figure class="icons agileits w3layouts">
