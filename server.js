@@ -10,14 +10,12 @@ app.set('view engine', 'hbs');
 app.use(express.static(__dirname + "/public")); //o dirname dá sempre o caminho até onde o servidor esta a ser executado. Assim, se houver um pedido para um ficheiro, vai ver a pasta public, se estiver la, serve-o
 
 app.get('/', (request, response) => {
-
-
-    
     response.render('index.hbs', {
        title: "Meteorology",
       texto7: "Olá"
     });
     
+
       /* var date = new Date().getHours().toString();
        console.log(date);
        var tempo;
@@ -39,7 +37,12 @@ app.get('/', (request, response) => {
     //response.send(`<h1>Current time: </h1><p>${date}</p>`); //toString, pois caso contrário corro o risco de ele achar que isto é um objeto
   
 });
-
+app.get('/meteorology', (request, response) => {
+    response.render('meteorology.hbs', {
+       title: "Meteorology",
+      texto7: "Olá"
+    });
+});  
 app.get('/weather', (req, resp) => {
     var address = req.query.local;
     var encodedAddress = encodeURIComponent(address);
@@ -86,6 +89,7 @@ app.get('/weather', (req, resp) => {
 //  interesses: ['jogar', 'passear', 'comer']
 //  });
 // }); 
+
 
 app.listen(3300);//escuta a porta 3300, cada computador tem milhares de portas, não pode haver dois serviços a escutar uma porta
 //a porta continua a mesma para todas as rotas
