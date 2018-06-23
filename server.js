@@ -68,7 +68,7 @@ app.get('/weather', (req, resp) => {
               console.log("It feels like: "+apparentTemperature);
               var tempo;
                  
-    resp.render('eco.hbs', {texto: temperature});
+    resp.render('eco.hbs', {texto: "A temperatura no " + req.query.local + " é " + temperature});
 
                  });
            });
