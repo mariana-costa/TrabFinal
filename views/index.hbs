@@ -5,15 +5,13 @@
 	License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 
-
-
 <!DOCTYPE html>
 <html>
 
 <!-- Head -->
 <head>
 
-	<title>Collective UI Kit A Flat Responsive Website Template | Home :: W3layouts</title>
+	<title>Index</title>
 
 	<!-- Meta-Tags -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -137,102 +135,17 @@
 					<!-- File-Upload-Widget -->
 					<div class="upload agileits w3layouts">
 						<div class="upload-form agileits w3layouts">
-							<form>
+							
 								<div>
 									
  <form action="/weather">
-         <input type="text" name="local" />
-         <button type="submit">Send!</button> 
+ <p>Escreve a morada</p>
+         <input type="text" name="local" placeholder="260 Broadway, New York City, NY">
+         <button type="submit">Envia!</button> 
         </form>
-          <div class="container">   
-      <form class="form-horizontal">
-          <fieldset>
-            <legend>Locais Favoritos</legend>         
-          </fieldset>                        
-          <div class="row">
-            <div class="col-md-6">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="label-item">Item</span>
-                </div>
-                <input type="text" class="form-control" id="item"/>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <p id="shooping-list-text">Nenhum Item Adicionado</p>
-              <ul class="list-group" id="shopping-list">
-              </ul>
-            </div>
           </div>
-          <div class="form-group">
-            <button type="submit" id="submit" class="btn btn-primary">Adicionar</button>
-            <button type="reset" id="clean"  class="btn btn-secondary">Limpar lista</button>
-        </div>
-      </form>
-    </div>
-    
-    <!-- include jQuery library -->
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script>
-    $(document).ready(function () {
-
-       $("#shopping-list").hide();
-       $("#item").focus();
-
-      /*
-       * check browser supports local storage
-       */
-      if (localStorage) {
-
-        var shoppingList_string = localStorage.getItem('shoppingList');
-        if (shoppingList_string) { //se o item existir 
-          $("#shooping-list-text").hide(); 
-          $("#shopping-list").show();
-          var shoppingList = JSON.parse(shoppingList_string);
-          console.log(shoppingList);
-          $.each(shoppingList, (index, text) => { //each vai a cada elemento do array
-            $("#shopping-list").append(`<li class="list-group-item">${text}</li>`);
-          });
-        }
-        
-        $("form")
-          /*
-           * clear local storage when the form is reseted
-           */
-           //quando o utilizador carregar no botao de reset, faz um clear do localStorage e um clear à pagina
-          .on('reset', function(){
-            console.log('cleaning!...');
-            localStorage.clear();
-            location.reload();
-          })
-          /*
-           * add to local storage when the form is submitted
-           */
-           .submit(function(){
-            var shoppingList_string = localStorage.getItem('shoppingList');
-            var shoppingList =[];
-
-            if(shoppingList_string) {
-              shoppingList = JSON.parse(shoppingList_string);
-            } //o item é um input do tipo texto
-            shoppingList.push($("#item").val());
-            localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
-            console.log(localStorage);
-          })
-      }
-    });
-    </script>
-
-								</div>
-							</form>
-
-						
-						</div>
-
-					</div>
+		  </div>
+		  </div>
 					<!-- //File-Upload-Widget -->
 
 
@@ -402,9 +315,7 @@
 						<div class="place agileits w3layouts">
 
 							<div class="city agileits w3layouts">
-								<form action="/weather">
-        						 <output type="text" name="local" />
-								<p>Amsterdam, Netherlands</p>
+								  <p>{{texto7}}</p>
 							</div>
 
 							<div class="dmy agileits w3layouts">

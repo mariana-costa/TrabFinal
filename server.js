@@ -10,13 +10,17 @@ app.set('view engine', 'hbs');
 app.use(express.static(__dirname + "/public")); //o dirname dá sempre o caminho até onde o servidor esta a ser executado. Assim, se houver um pedido para um ficheiro, vai ver a pasta public, se estiver la, serve-o
 
 app.get('/', (request, response) => {
-    response.render('index.hbs', {
-       title: "Welcome to this site!",
-      
 
+
+    
+    response.render('index.hbs', {
+       title: "Meteorology",
+      texto7: "Olá"
+    });
+    
       /* var date = new Date().getHours().toString();
        console.log(date);
-       
+       var tempo;
        if(date >= 20 || date <= 6){
            var tempo = "Boa noite! São " + date + " horas da noite";
        }
@@ -33,7 +37,7 @@ app.get('/', (request, response) => {
      });
      */
     //response.send(`<h1>Current time: </h1><p>${date}</p>`); //toString, pois caso contrário corro o risco de ele achar que isto é um objeto
-    });
+  
 });
 
 app.get('/weather', (req, resp) => {
@@ -48,7 +52,7 @@ app.get('/weather', (req, resp) => {
            //console.log("latitude:"+lat);
            //console.log("longitude:"+lng);
            var formatted_address = body.results[0].formatted_address;
-           console.log(formatted_address);
+           
     
     //O segundo request tem de estar dentro do primeiro
            request({
@@ -66,7 +70,8 @@ app.get('/weather', (req, resp) => {
               var segundos = today.getSeconds();
               console.log("The temperature is: "+temperature);
               console.log("It feels like: "+apparentTemperature);
-              var tempo;
+              console.log(formatted_address);
+              
                  
     resp.render('eco.hbs', {texto: req.query.local, texto2: "A temperatura é " + temperature, texto3: "A temperatura aparente é " + apparentTemperature, texto4: "A humidade é " + humidade, texto5: "A probabilidade de precipitação é " + precipitacao});
 
@@ -82,10 +87,5 @@ app.get('/weather', (req, resp) => {
 //  });
 // }); 
 
-/*app.get('/carochao', (request, response) => {
-
-    
-}); 
- */
 app.listen(3300);//escuta a porta 3300, cada computador tem milhares de portas, não pode haver dois serviços a escutar uma porta
 //a porta continua a mesma para todas as rotas
