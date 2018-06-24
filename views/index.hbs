@@ -115,7 +115,8 @@
 							<form action="/weather">
 							<div class="item-top aits">Meteorology</div>
 							<div class="item-bottom w3l">
-								<button type="submit" style="background-color:black color:aqua">Meteorology</button>
+								<button type="submit" id="btn" style="background-color:black text:black">Meteorology</button>
+								
 							</div>
 							</form>
 						</div>
@@ -136,6 +137,14 @@
 	var age = document.getElementsByClassName("item-bottom w3l");
 var outro = document.getElementsByClassName("item-top aits");
 var ainda = document.getElementsByClassName("item-container");
+
+document.getElementById("btn").disabled = false;
+//document.getElementById("btn").style.visibility = "hidden";
+document.getElementById("btn").style.backgroundColor=" #3b3b3b";
+document.getElementById("btn").style.border="0px";
+document.getElementById("btn").style.color="#38b8ff";
+document.getElementById("btn").style.fontFamily="glyphicons-halflings-regular.ttf";
+document.getElementById("btn").style.fontSize="20px";
 						
 if(age.value == 'Meteorology'){
 	age.onclick = function() {
