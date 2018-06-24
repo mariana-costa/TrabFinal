@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="uf8">
-        <title>no title</title>
+        <title>Meteo</title>
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
         <style>
@@ -96,21 +96,122 @@
 							
 								<div>
 									 <h1>{{texto}}</h1>
-            <p>{{texto2}}</p>
-             <p>{{texto3}}</p>
+									  <h2 style="text-align: center; font-size:20px">{{desc}}</h2>
+									 <h2 style="text-align: center; font-size:30px">{{tempAtual}} ºC</h2>
+             <p style="font-size:20px">SENSAÇÃO TÉRMICA</p>
+			 <p>{{texto3}} ºC</p>
+			 <p style="font-size:20px">HUMIDADE</p>
              <p>{{texto4}}</p>
+			 <p style="font-size:20px">POSSIBILIDADE DE CHUVA</p>
              <p>{{texto5}}</p>
+			 <br>
+			 <p>{{info}}</p>
+		
+	
  <form action="/weather"><br>
  <p>Procura por outro local!</p>
          <input type="text" name="local" placeholder="260 Broadway, New York City, NY">
          <button type="submit">Envia!</button> 
         </form>
           </div>
+		  	<div>
+				  <br>
+			<h2>Guarda este local nos teus favoritos</h2>
+              <!--<form action="help.html"> --><button class="guardar">Guardar</button><!--</form>-->
+              <div class="container">
+      <form method="post" class="form-horizontal">
+          <fieldset>
+            <legend>Favoritos</legend>         
+          </fieldset>                        
+          <div class="row">
+            <div class="col-md-6">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="label-item">Item</span>
+                </div>
+                <input type="text" class="form-control" id="item"/>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <p id="shooping-list-text">Nenhum Item Adicionado</p>
+              <ul class="list-group" id="shopping-list">
+              </ul>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" id="submit" class="btn btn-primary">Adicionar</button>
+            <button type="reset" id="clean"  class="btn btn-secondary">Limpar lista</button>
+        </div>
+      </form>
+    </div>
+    
+    <!-- include jQuery library -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function () {
+
+       $("#shopping-list").hide();
+       $("#item").focus();
+
+      /*
+       * check browser supports local storage
+       */
+      if (localStorage) {
+
+        var shoppingList_string = localStorage.getItem('shoppingList');
+        if (shoppingList_string) { //se o item existir 
+          $("#shooping-list-text").hide(); 
+          $("#shopping-list").show();
+          var shoppingList = JSON.parse(shoppingList_string);
+          console.log(shoppingList);
+          $.each(shoppingList, (index, text) => { //each vai a cada elemento do array
+            $("#shopping-list").append(`<li class="list-group-item">${text}</li>`);
+          });
+        }
+        
+        $("form")
+          /*
+           * clear local storage when the form is reseted
+           */
+           //quando o utilizador carregar no botao de reset, faz um clear do localStorage e um clear à pagina
+          .on('reset', function(){
+            console.log('cleaning!...');
+            localStorage.clear();
+            location.reload();
+          })
+          /*
+           * add to local storage when the form is submitted
+           */
+           .submit(function(){
+            var shoppingList_string = localStorage.getItem('shoppingList');
+            var shoppingList =[];
+
+            if(shoppingList_string) {
+              shoppingList = JSON.parse(shoppingList_string);
+            }
+            shoppingList.push($("#item").val());
+            localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+            console.log(localStorage);
+          })
+      }
+    });
+    </script>
+      
+          </div>
 		  </div>
+		  
 		  </div>
-					<!-- //File-Upload-Widget -->
+
+
+		  				<!-- //File-Upload-Widget -->
 
 				</div>
+			
+		  </div>
+		  </div>
 				<!-- //Vertical-Grid-1 -->
 
 
@@ -125,7 +226,7 @@
 							<div class="city agileits w3layouts">
 								  <p>{{texto8}}</p>
 							</div>
-
+							
 							<div class="dmy agileits w3layouts">
 								<script type="text/javascript">
 								var mydate=new Date()
@@ -151,37 +252,40 @@
 
 						<div class="weather-bottom agileits w3layouts">
 							<ul>
-								<li class="bg agileits w3layouts"><h4>SÁB</h4>
-																		<h5>{{texto9}}</h5>
-									<h6>{{texto10}}</h6>
-								</li>
 								<li><h4>DOM</h4>
-									
+								
 									<h5>{{texto11}}</h5>
 									<h6>{{texto12}}</h6>
 								</li>
-								<li class="bg agileits w3layouts"><h4>SEG</h4>
+								<li><h4>SEG</h4>
 									
 									<h5>{{texto13}}</h5>
 									<h6>{{texto14}}</h6>
 								</li>
-								<li><h4>TER</h4>
+								<li class="bg agileits w3layouts"><h4>TER</h4>
 									
 									<h5>{{texto15}}</h5>
 									<h6>{{texto16}}</h6>
 								</li>
-								<li class="bg agileits w3layouts"><h4>QUA</h4>
+								<li><h4>QUA</h4>
 								
 									<h5>{{texto17}}</h5>
 									<h6>{{texto18}}</h6>
 								</li>
-                <li class="bg agileits w3layouts"><h4>QUI</h4>
+                <li><h4>QUI</h4>
+				
 									<h5>{{texto19}}</h5>
 									<h6>{{texto20}}</h6>
 								</li>
-                <li class="bg agileits w3layouts"><h4>SEX</h4>
+                <li><h4>SEX</h4>
+				
 									<h5>{{texto21}}</h5>
 									<h6>{{texto22}}</h6>
+								</li>
+								<li><h4>SÁB</h4>
+								
+									<h5>{{texto9}}</h5>
+									<h6>{{texto10}}</h6>
 								</li>
                 
 							</ul>
@@ -302,89 +406,7 @@
 		<!-- //Custom-JavaScript-File-Links -->
 
 	
-    <h3>Guarde este local nos seus locais favoritos!</h3>
-             <!--<form action="help.html"> --><button class="guardar">Guardar!</button><!--</form>-->
-              <div class="container">
-      <form method="post" class="form-horizontal">
-          <fieldset>
-            <legend>Favoritos</legend>         
-          </fieldset>                        
-          <div class="row">
-            <div class="col-md-6">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="label-item">Item</span>
-                </div>
-                <input type="text" class="form-control" id="item"/>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <p id="shooping-list-text">Nenhum Item Adicionado</p>
-              <ul class="list-group" id="shopping-list">
-              </ul>
-            </div>
-          </div>
-          <div class="form-group">
-            <button type="submit" id="submit" class="btn btn-primary">Adicionar</button>
-            <button type="reset" id="clean"  class="btn btn-secondary">Limpar lista</button>
-        </div>
-      </form>
-    </div>
-    
-    <!-- include jQuery library -->
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script>
-    $(document).ready(function () {
-
-       $("#shopping-list").hide();
-       $("#item").focus();
-
-      /*
-       * check browser supports local storage
-       */
-      if (localStorage) {
-
-        var shoppingList_string = localStorage.getItem('shoppingList');
-        if (shoppingList_string) { //se o item existir 
-          $("#shooping-list-text").hide(); 
-          $("#shopping-list").show();
-          var shoppingList = JSON.parse(shoppingList_string);
-          console.log(shoppingList);
-          $.each(shoppingList, (index, text) => { //each vai a cada elemento do array
-            $("#shopping-list").append(`<li class="list-group-item">${text}</li>`);
-          });
-        }
-        
-        $("form")
-          /*
-           * clear local storage when the form is reseted
-           */
-           //quando o utilizador carregar no botao de reset, faz um clear do localStorage e um clear à pagina
-          .on('reset', function(){
-            console.log('cleaning!...');
-            localStorage.clear();
-            location.reload();
-          })
-          /*
-           * add to local storage when the form is submitted
-           */
-           .submit(function(){
-            var shoppingList_string = localStorage.getItem('shoppingList');
-            var shoppingList =[];
-
-            if(shoppingList_string) {
-              shoppingList = JSON.parse(shoppingList_string);
-            }
-            shoppingList.push($("#item").val());
-            localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
-            console.log(localStorage);
-          })
-      }
-    });
-    </script>
+   
        
     </body>
     <footer>

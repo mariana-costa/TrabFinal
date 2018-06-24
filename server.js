@@ -21,23 +21,41 @@ if(date > 12 && date < 20){
     texto7 = "Boa tarde!";
 }
 
+//var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+
+var d = new Date();
+var ndia = d.getDay();
+if(ndia == 0){
+    ndia = "Domingo"
+}
+if(ndia == 1){
+    ndia = "Segunda"
+}
+if(ndia == 2){
+    ndia = "Terça"
+}
+if(ndia == 3){
+    ndia = "Quarta"
+}
+if(ndia == 4){
+    ndia = "Quinta"
+}
+if(ndia == 5){
+    ndia = "Sexta"
+}
+if(ndia == 6){
+    ndia = "Sábado"
+}
+
+console.log(ndia);
+
 app.get('/', (request, response) => {
     response.render('index.hbs', {
        title: "Meteorology",
       texto7:`${texto7}`
     });
     
-
-      
-    
-       /*
-    resp.render('index.hbs', {
-        title: "Current time:",
-        text: `${tempo}`
-     });
-     */
-    //response.send(`<h1>Current time: </h1><p>${date}</p>`); //toString, pois caso contrário corro o risco de ele achar que isto é um objeto
-  
 });
 
 app.get('/weather', (req, resp) => {
@@ -64,6 +82,8 @@ app.get('/weather', (req, resp) => {
                   var humidade = DSbody.currently.humidity;
               var uvIndex = DSbody.currently.uvIndex;
               var precipitacao = DSbody.currently.precipProbability;
+              var summary = DSbody.currently.summary;
+              console.log(summary);
               var today = new Date(DSbody.currently.time * 1000);
               var horas = today.getHours();
               var minutos = today.getMinutes();
@@ -71,26 +91,28 @@ app.get('/weather', (req, resp) => {
               console.log("The temperature is: "+temperature);
               console.log("It feels like: "+apparentTemperature);
               console.log(formatted_address);
-              var sabHigh = DSbody.daily.data[0].temperatureMax;
-              var sabLow = DSbody.daily.data[0].temperatureMin;
-              var domHigh = DSbody.daily.data[1].temperatureMax;
-              var domLow = DSbody.daily.data[1].temperatureMin;
-              var segHigh = DSbody.daily.data[2].temperatureMax;
-              var segLow = DSbody.daily.data[2].temperatureMin;
-              var terHigh = DSbody.daily.data[3].temperatureMax;
-              var terLow = DSbody.daily.data[3].temperatureMin;
-              var quaHigh = DSbody.daily.data[4].temperatureMax;
-              var quaLow = DSbody.daily.data[4].temperatureMin;
-              var quiHigh = DSbody.daily.data[5].temperatureMax;
-              var quiLow = DSbody.daily.data[5].temperatureMin;
-              var sexHigh = DSbody.daily.data[6].temperatureMax;
-              var sexLow = DSbody.daily.data[6].temperatureMin;
-              //var dia2 = DSbody.daily.data[1];
-              //console.log(dia2);
-              
-                 
-    resp.render('eco.hbs', {texto: req.query.local, texto2: "A temperatura é " + temperature, texto3: "A temperatura aparente é " + apparentTemperature, texto4: "A humidade é " + humidade, texto5: "A probabilidade de precipitação é " + precipitacao, texto8: req.query.local, 
-    texto9: sabHigh, texto10: sabLow, texto11: domHigh, texto12: domLow,  texto13: segHigh, texto14: segLow, texto15: terHigh, texto16: terLow, texto17: quaHigh, texto18: quaLow, texto19:quiHigh, texto20: quiLow, texto21: sexHigh, texto22: sexLow});
+              //Temperaturas Máximas e Minimas do primeiro ao sétimo dia da semana
+              var PrimeiroHigh = DSbody.daily.data[0].temperatureMax;
+              var PrimeiroLow = DSbody.daily.data[0].temperatureMin;
+              var SegundoHigh = DSbody.daily.data[1].temperatureMax;
+              var SegundoLow = DSbody.daily.data[1].temperatureMin;
+              var TerceiroHigh = DSbody.daily.data[2].temperatureMax;
+              var TerceiroLow = DSbody.daily.data[2].temperatureMin;
+              var QuartoHigh = DSbody.daily.data[3].temperatureMax;
+              var QuartoLow = DSbody.daily.data[3].temperatureMin;
+              var QuintoHigh = DSbody.daily.data[4].temperatureMax;
+              var QuintoLow = DSbody.daily.data[4].temperatureMin;
+              var SextoHigh = DSbody.daily.data[5].temperatureMax;
+              var SextoLow = DSbody.daily.data[5].temperatureMin;
+              var SetimoHigh = DSbody.daily.data[6].temperatureMax;
+              var SetimoLow = DSbody.daily.data[6].temperatureMin;
+
+
+    resp.render('eco.hbs', {texto: req.query.local, texto3: apparentTemperature, texto4: humidade, texto5: precipitacao, texto8: req.query.local, 
+    texto9: PrimeiroHigh, texto10: PrimeiroLow, texto11: SegundoHigh, texto12: SegundoLow,  texto13: TerceiroHigh, texto14: TerceiroLow, texto15: QuartoHigh, texto16: QuartoLow,
+    texto17: QuintoHigh, texto18: QuintoLow, texto19: SextoHigh, texto20: SextoLow, texto21: SetimoHigh, texto22: SetimoLow, tempAtual: temperature, info: "Estão " + temperature + " ºC, a temperatura máxima prevista para hoje é de " + PrimeiroHigh  + " ºC",
+    desc: summary
+});
 
                  });
            });
