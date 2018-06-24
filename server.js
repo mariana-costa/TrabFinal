@@ -9,25 +9,27 @@ const request = require('request');
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + "/public")); //o dirname dá sempre o caminho até onde o servidor esta a ser executado. Assim, se houver um pedido para um ficheiro, vai ver a pasta public, se estiver la, serve-o
 
+//cumprimentos
+var date = new Date().getHours().toString();
+if(date >= 20 || date <= 6){
+    texto7 = "Boa noite!";
+}
+if(date > 6 && date <= 12){
+    texto7 = "Bom dia!";
+}
+if(date > 12 && date < 20){
+    texto7 = "Boa tarde!";
+}
+
 app.get('/', (request, response) => {
     response.render('index.hbs', {
        title: "Meteorology",
-      texto7: "Olá"
+      texto7:`${texto7}`
     });
     
 
-      /* var date = new Date().getHours().toString();
-       console.log(date);
-       var tempo;
-       if(date >= 20 || date <= 6){
-           var tempo = "Boa noite! São " + date + " horas da noite";
-       }
-       if(date > 6 && date <= 12){
-           var tempo = "Bom dia! São " + date + " horas da manhã";
-       }
-       if(date > 12 && date < 20){
-           var tempo = "Boa tarde! São " + date + " horas da tarde";
-       }
+      
+    
        /*
     resp.render('index.hbs', {
         title: "Current time:",
