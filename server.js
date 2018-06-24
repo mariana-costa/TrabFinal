@@ -102,6 +102,12 @@ app.get('/weather', (req, resp) => {
         });
     });  
 
+app.get('/about', (request, response) => {
+    response.render('about.hbs', {
+        title: "About us"
+     });
+ });  
+
 //app.get('/sobre', (request, response) => {
 //  response.send({
 //    nome: 'Mariana',
