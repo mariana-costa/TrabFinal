@@ -52,7 +52,7 @@ console.log(ndia);
 
 app.get('/', (request, response) => {
     response.render('index.hbs', {
-       title: "Meteorology",
+       title: "Nome do site",
       texto7:`${texto7}`
     });
     
@@ -79,10 +79,13 @@ app.get('/weather', (req, resp) => {
           }, (DSerror, DSresponse, DSbody) => {
                   var temperature = DSbody.currently.temperature;
                   var apparentTemperature = DSbody.currently.apparentTemperature;
-                  var humidade = DSbody.currently.humidity;
+                  var humidade = DSbody.currently.humidity*100;
               var uvIndex = DSbody.currently.uvIndex;
-              var precipitacao = DSbody.currently.precipProbability;
+              var precipitacao = DSbody.currently.precipProbability*100;
               var summary = DSbody.currently.summary;
+              var vento = DSbody.currently.windSpeed;
+              var pressao = DSbody.currently.pressure;
+              var visibilidade = DSbody.currently.visibility;
               console.log(summary);
               var today = new Date(DSbody.currently.time * 1000);
               var horas = today.getHours();
@@ -108,21 +111,16 @@ app.get('/weather', (req, resp) => {
               var SetimoLow = DSbody.daily.data[6].temperatureMin;
 
 
-    resp.render('eco.hbs', {texto: req.query.local, texto3: apparentTemperature, texto4: humidade, texto5: precipitacao, texto8: req.query.local, 
-    texto9: PrimeiroHigh, texto10: PrimeiroLow, texto11: SegundoHigh, texto12: SegundoLow,  texto13: TerceiroHigh, texto14: TerceiroLow, texto15: QuartoHigh, texto16: QuartoLow,
-    texto17: QuintoHigh, texto18: QuintoLow, texto19: SextoHigh, texto20: SextoLow, texto21: SetimoHigh, texto22: SetimoLow, tempAtual: temperature, info: "Estão " + temperature + " ºC, a temperatura máxima prevista para hoje é de " + PrimeiroHigh  + " ºC",
-    desc: summary
+    resp.render('eco.hbs', {texto: req.query.local, textoTempAparente: apparentTemperature, textoHumidade: humidade, textoPrecipitacao: precipitacao, texto8: req.query.local, 
+    texto9: SetimoHigh, texto10: SetimoLow, texto11: PrimeiroHigh, texto12: PrimeiroLow,  texto13: SegundoHigh, texto14: SegundoLow, texto15: TerceiroHigh, texto16: TerceiroLow,
+    texto17: QuartoHigh, texto18: QuartoLow, texto19: QuintoHigh, texto20: QuintoLow, texto21: SextoHigh, texto22: SextoLow, tempAtual: temperature, info: "Estão " + temperature + " ºC, a temperatura máxima prevista para hoje é de " + PrimeiroHigh  + " ºC.",
+    subtitulo: summary, textoVento: vento, textoUv: uvIndex, textoPressao: pressao, textoVisibilidade: visibilidade
 });
 
                  });
            });
 
     });
-    app.get('/meteorology', (request, response) => {
-        response.render('meteorology.hbs', {
-           title: "Meteorology"
-        });
-    });  
 
 app.get('/about', (request, response) => {
     response.render('about.hbs', {
