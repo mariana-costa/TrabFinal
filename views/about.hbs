@@ -74,9 +74,9 @@
 		<div class="wrap">
 
 			<!-- Navbar -->
-			<nav style="list-style:none">
-				<ul style="list-style:none; text-align:center">
-					<li style="display:inline-block">
+			<nav style="width: 100%; text-align: center">
+				<ul>
+					<li style="float: none; display: inline-block; text-align:center">
 						<div class="item-container" style="width:120%">
 							<form action="/">
 							<div class="item-top aits">Home</div>
@@ -87,7 +87,7 @@
 						</div>
 					</li>
 				
-					<li style="display: inline-block">
+					<li style="float: none; display: inline-block; text-align:center">
 						<div class="item-container" style="width:120%">
 							<form action="/about">
 							<div class="item-top aits">About</div>
@@ -121,8 +121,7 @@ document.getElementById("btn2").style.color="#38b8ff";
 document.getElementById("btn2").style.fontFamily="Arial, Helvetica, sans-serif";
 document.getElementById("btn2").style.fontSize="17px";				
 	</script>
-						
-	</script>
+
 
 
 			<!-- Vertical-Grids -->
@@ -137,12 +136,24 @@ document.getElementById("btn2").style.fontSize="17px";
 							
 								<div>
 									
- 					<form action="/weather">
- 						<p>Escreve a morada</p>
-        					 <input type="text" name="local" placeholder="260 Broadway, New York City, NY">
-         						<button type="submit">Envia!</button> 
-       				 </form>
-         		 </div>
+ 					<p>O *nome do site* é especializado em previsão e visualização do tempo....</p><br>
+					 <p>Ajuda a divulgar o nosso webite partilhando-o no teu Facebook!</p><br>
+
+<!-- Botão de partilha no Facebook -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/pt_PT/sdk.js#xfbml=1&version=v3.0';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-share-button" data-href="http://localhost:3300/?" data-layout="button_count" data-size="large" data-mobile-iframe="false"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A3300%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partilhar</a></div>
+
+<!-- Botão de partilha no Facebook -->
+
+				  </div>
 		 	 </div>
 		  </div>
 					<!-- //File-Upload-Widget -->

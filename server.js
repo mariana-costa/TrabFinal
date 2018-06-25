@@ -111,7 +111,7 @@ app.get('/weather', (req, resp) => {
               var SetimoLow = DSbody.daily.data[6].temperatureMin;
 
 
-    resp.render('eco.hbs', {texto: req.query.local, textoTempAparente: apparentTemperature, textoHumidade: humidade, textoPrecipitacao: precipitacao, texto8: req.query.local, 
+    resp.render('meteo.hbs', {texto: req.query.local, textoTempAparente: apparentTemperature, textoHumidade: humidade, textoPrecipitacao: precipitacao, texto8: req.query.local, 
     texto9: SetimoHigh, texto10: SetimoLow, texto11: PrimeiroHigh, texto12: PrimeiroLow,  texto13: SegundoHigh, texto14: SegundoLow, texto15: TerceiroHigh, texto16: TerceiroLow,
     texto17: QuartoHigh, texto18: QuartoLow, texto19: QuintoHigh, texto20: QuintoLow, texto21: SextoHigh, texto22: SextoLow, tempAtual: temperature, info: "Estão " + temperature + " ºC, a temperatura máxima prevista para hoje é de " + PrimeiroHigh  + " ºC.",
     subtitulo: summary, textoVento: vento, textoUv: uvIndex, textoPressao: pressao, textoVisibilidade: visibilidade
@@ -124,7 +124,7 @@ app.get('/weather', (req, resp) => {
 
 app.get('/about', (request, response) => {
     response.render('about.hbs', {
-        title: "About us"
+        title: "About Us"
      });
  });  
 

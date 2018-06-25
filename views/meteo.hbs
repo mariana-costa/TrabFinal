@@ -79,27 +79,25 @@
 		<div class="wrap">
 
 			<!-- Navbar -->
-			<nav>
+			<nav style="width: 100%; text-align: center">
 				<ul>
-					<li>
+					<li style="float: none; display: inline-block; text-align:center">
 						<div class="item-container" style="width:120%">
 							<form action="/">
 							<div class="item-top aits">Home</div>
 							<div class="item-bottom w3l">
-								<button type="submit" id="btn1">Home
-									</button>
+								<button type="submit" id="btn1">Home</button>
 								</div>
 							</form>
 						</div>
 					</li>
 				
-					<li>
+					<li style="float: none; display: inline-block; text-align:center">
 						<div class="item-container" style="width:120%">
 							<form action="/about">
 							<div class="item-top aits">About</div>
 							<div class="item-bottom w3l">
-								<button type="submit" id="btn2">About
-									</button>
+								<button type="submit" id="btn2">About</button>
 								</div>
 							</form>
 						</div>
@@ -112,7 +110,6 @@
 
 
 document.getElementById("btn1").disabled = false;
-//document.getElementById("btn").style.visibility = "hidden";
 document.getElementById("btn1").style.backgroundColor="#191919";
 document.getElementById("btn1").style.border="0px";
 document.getElementById("btn1").style.color="#38b8ff";
@@ -120,7 +117,6 @@ document.getElementById("btn1").style.fontFamily="Arial, Helvetica, sans-serif";
 document.getElementById("btn1").style.fontSize="17px";
 
 document.getElementById("btn2").disabled = false;
-//document.getElementById("btn").style.visibility = "hidden";
 document.getElementById("btn2").style.backgroundColor="#191919";
 document.getElementById("btn2").style.border="0px";
 document.getElementById("btn2").style.color="#38b8ff";
@@ -152,7 +148,7 @@ document.getElementById("btn2").style.fontSize="17px";
 			 <p style="font-size:20px; color:#00b5c7">VENTO</p>
 			 <p>sso {{textoVento}} mph</p>
 			 <p style="font-size:20px; color:#00b5c7">PRESSÃO</p>
-             <p>{{textoPressao}} mbar</p>
+             <p>{{textoPressao}} hPa</p>
 			 <p style="font-size:20px; color:#00b5c7">ÍNDICE UV</p>
              <p>{{textoUv}}</p>
 			  <p style="font-size:20px; color:#00b5c7">VISIBILIDADE</p>

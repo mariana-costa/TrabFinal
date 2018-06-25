@@ -67,7 +67,7 @@
 	<!-- Body -->
 	<body onload="startTime()">
 		<h1>{{title}}</h1>
-		
+
 
 		<!-- Wrap -->
 		<div class="wrap">
@@ -99,9 +99,9 @@
 
 
 			<!-- Navbar -->
-			<nav style="list-style:none">
-				<ul style="list-style:none; text-align:center">
-					<li style="display:inline-block">
+			<nav style="width: 100%; text-align: center">
+				<ul>
+					<li style="float: none; display: inline-block; text-align:center">
 						<div class="item-container" style="width:120%">
 							<form action="/">
 							<div class="item-top aits">Home</div>
@@ -112,13 +112,12 @@
 						</div>
 					</li>
 				
-					<li style="display: inline-block">
+					<li style="float: none; display: inline-block; text-align:center">
 						<div class="item-container" style="width:120%">
 							<form action="/about">
 							<div class="item-top aits">About</div>
 							<div class="item-bottom w3l">
-								<button type="submit" id="btn2">About
-									</button>
+								<button type="submit" id="btn2">About</button>
 								</div>
 							</form>
 						</div>
@@ -161,9 +160,9 @@ document.getElementById("btn2").style.fontSize="17px";
 								<div>
 									
  					<form action="/weather">
- 						<p>Escreve a morada</p>
+ 						<p>Procura por um local para veres a meteorologia</p>
         					 <input type="text" name="local" placeholder="260 Broadway, New York City, NY">
-         						<button type="submit">Envia!</button> 
+         						<button type="submit">Inserir!</button> 
        				 </form>
          		 </div>
 		 	 </div>
