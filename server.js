@@ -11,14 +11,18 @@ app.use(express.static(__dirname + "/public")); //o dirname dá sempre o caminho
 
 //cumprimentos
 var date = new Date().getHours().toString();
+//var iconetime;
 if(date >= 20 || date <= 6){
     texto7 = "Good evening!";
+    //document.getElementById("iconetime").value = "<img src='images/evening.png' width='128' height='128'>";
 }
 if(date > 6 && date <= 12){
     texto7 = "Good morning!";
+   //document.getElementById("iconetime").value = "<img src='images/morning.png' width='128' height='128'>";
 }
 if(date > 12 && date < 20){
     texto7 = "Good afternoon!";
+    //document.getElementById("iconetime").value = "<img src='images/night.png' width='128' height='128'>";
 }
 
 //var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -26,29 +30,85 @@ if(date > 12 && date < 20){
 
 var d = new Date();
 var ndia = d.getDay();
+var ndiaSemana = "";
+var ndiaAmanha = "";
+var ndiaAmanha2 = "";
+var ndiaAmanha3 = "";
+var ndiaAmanha4 = "";
+var ndiaAmanha5 = "";
+var ndiaAmanha6 = "";
 if(ndia == 0){
-    ndia = "Domingo"
+    ndiaSemana = "Domingo"
+
+    ndiaAmanha = "Segunda"
+    ndiaAmanha2 = "Terça"
+    ndiaAmanha3 = "Quarta"
+    ndiaAmanha4 = "Quinta"
+    ndiaAmanha5 = "Sexta"
+    ndiaAmanha6 = "Sábado"
 }
 if(ndia == 1){
-    ndia = "Segunda"
+    ndiaSemana = "Segunda"
+
+    ndiaAmanha = "Segunda"
+    ndiaAmanha2 = "Terça"
+    ndiaAmanha3 = "Quarta"
+    ndiaAmanha4 = "Quinta"
+    ndiaAmanha5 = "Sexta"
+    ndiaAmanha6 = "Sábado"
 }
 if(ndia == 2){
-    ndia = "Terça"
+    ndiaSemana = "Terça"
+
+    ndiaAmanha = "Segunda"
+    ndiaAmanha2 = "Terça"
+    ndiaAmanha3 = "Quarta"
+    ndiaAmanha4 = "Quinta"
+    ndiaAmanha5 = "Sexta"
+    ndiaAmanha6 = "Sábado"
 }
 if(ndia == 3){
-    ndia = "Quarta"
+    ndiaSemana = "Quarta"
+
+    ndiaAmanha = "Segunda"
+    ndiaAmanha2 = "Terça"
+    ndiaAmanha3 = "Quarta"
+    ndiaAmanha4 = "Quinta"
+    ndiaAmanha5 = "Sexta"
+    ndiaAmanha6 = "Sábado"
 }
 if(ndia == 4){
-    ndia = "Quinta"
+    ndiaSemana = "Quinta"
+
+    ndiaAmanha = "Segunda"
+    ndiaAmanha2 = "Terça"
+    ndiaAmanha3 = "Quarta"
+    ndiaAmanha4 = "Quinta"
+    ndiaAmanha5 = "Sexta"
+    ndiaAmanha6 = "Sábado"
 }
 if(ndia == 5){
-    ndia = "Sexta"
+    ndiaSemana = "Sexta"
+
+    ndiaAmanha = "Segunda"
+    ndiaAmanha2 = "Terça"
+    ndiaAmanha3 = "Quarta"
+    ndiaAmanha4 = "Quinta"
+    ndiaAmanha5 = "Sexta"
+    ndiaAmanha6 = "Sábado"
 }
 if(ndia == 6){
-    ndia = "Sábado"
+    ndiaSemana = "Sábado"
+
+    ndiaAmanha = "Segunda"
+    ndiaAmanha2 = "Terça"
+    ndiaAmanha3 = "Quarta"
+    ndiaAmanha4 = "Quinta"
+    ndiaAmanha5 = "Sexta"
+    ndiaAmanha6 = "Sábado"
 }
 
-console.log(ndia);
+console.log(ndiaSemana);
 
 app.get('/', (request, response) => {
     response.render('index.hbs', {
@@ -114,7 +174,7 @@ app.get('/weather', (req, resp) => {
     resp.render('meteo.hbs', {texto: req.query.local, textoTempAparente: apparentTemperature, textoHumidade: humidade, textoPrecipitacao: precipitacao, texto8: req.query.local, 
     texto9: SetimoHigh, texto10: SetimoLow, texto11: PrimeiroHigh, texto12: PrimeiroLow,  texto13: SegundoHigh, texto14: SegundoLow, texto15: TerceiroHigh, texto16: TerceiroLow,
     texto17: QuartoHigh, texto18: QuartoLow, texto19: QuintoHigh, texto20: QuintoLow, texto21: SextoHigh, texto22: SextoLow, tempAtual: temperature, info: "It's " + temperature + " ºC, the maximum temperature expected for today is " + PrimeiroHigh  + " ºC.",
-    subtitulo: summary, textoVento: vento, textoUv: uvIndex, textoPressao: pressao, textoVisibilidade: visibilidade
+    subtitulo: summary, textoVento: vento, textoUv: uvIndex, textoPressao: pressao, textoVisibilidade: visibilidade, hoje: ndiaSemana, amanha: ndiaSemana, amanha2: ndiaSemana, amanha3: ndiaSemana, amanha4: ndiaSemana, amanha5: ndiaSemana, amanha6: ndiaSemana
 });
 
                  });
