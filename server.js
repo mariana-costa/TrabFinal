@@ -12,13 +12,13 @@ app.use(express.static(__dirname + "/public")); //o dirname dá sempre o caminho
 //cumprimentos
 var date = new Date().getHours().toString();
 if(date >= 20 || date <= 6){
-    texto7 = "Boa noite!";
+    texto7 = "Good evening!";
 }
 if(date > 6 && date <= 12){
-    texto7 = "Bom dia!";
+    texto7 = "Good morning!";
 }
 if(date > 12 && date < 20){
-    texto7 = "Boa tarde!";
+    texto7 = "Good afternoon!";
 }
 
 //var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -52,7 +52,7 @@ console.log(ndia);
 
 app.get('/', (request, response) => {
     response.render('index.hbs', {
-       title: "Nome do site",
+       title: "Cloudy",
       texto7:`${texto7}`
     });
     
@@ -113,7 +113,7 @@ app.get('/weather', (req, resp) => {
 
     resp.render('meteo.hbs', {texto: req.query.local, textoTempAparente: apparentTemperature, textoHumidade: humidade, textoPrecipitacao: precipitacao, texto8: req.query.local, 
     texto9: SetimoHigh, texto10: SetimoLow, texto11: PrimeiroHigh, texto12: PrimeiroLow,  texto13: SegundoHigh, texto14: SegundoLow, texto15: TerceiroHigh, texto16: TerceiroLow,
-    texto17: QuartoHigh, texto18: QuartoLow, texto19: QuintoHigh, texto20: QuintoLow, texto21: SextoHigh, texto22: SextoLow, tempAtual: temperature, info: "Estão " + temperature + " ºC, a temperatura máxima prevista para hoje é de " + PrimeiroHigh  + " ºC.",
+    texto17: QuartoHigh, texto18: QuartoLow, texto19: QuintoHigh, texto20: QuintoLow, texto21: SextoHigh, texto22: SextoLow, tempAtual: temperature, info: "It's " + temperature + " ºC, the maximum temperature expected for today is " + PrimeiroHigh  + " ºC.",
     subtitulo: summary, textoVento: vento, textoUv: uvIndex, textoPressao: pressao, textoVisibilidade: visibilidade
 });
 
@@ -127,14 +127,6 @@ app.get('/about', (request, response) => {
         title: "About Us"
      });
  });  
-
-//app.get('/sobre', (request, response) => {
-//  response.send({
-//    nome: 'Mariana',
-//  interesses: ['jogar', 'passear', 'comer']
-//  });
-// }); 
-
 
 app.listen(3300);//escuta a porta 3300, cada computador tem milhares de portas, não pode haver dois serviços a escutar uma porta
 //a porta continua a mesma para todas as rotas

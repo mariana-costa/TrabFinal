@@ -73,56 +73,58 @@
 
 <!-- Body -->
 	<body onload="startTime()">
-		<h1>{{title}}</h1>
 		
 		<!-- Wrap -->
-		<div class="wrap">
+	<div class="wrap">
 
-			<!-- Navbar -->
-			<nav style="width: 100%; text-align: center">
-				<ul>
-					<li style="float: none; display: inline-block; text-align:center">
-						<div class="item-container" style="width:120%">
-							<form action="/">
+		<!-- Navbar -->
+		<nav style="width: 100%; text-align: center; margin-top: 0px">
+			<ul>
+				<li style="float: none; display: inline-block; text-align:center">
+					<div class="item-container" style="width:100%">
+						<form action="/">
 							<div class="item-top aits">Home</div>
 							<div class="item-bottom w3l">
 								<button type="submit" id="btn1">Home</button>
-								</div>
-							</form>
-						</div>
-					</li>
-				
-					<li style="float: none; display: inline-block; text-align:center">
-						<div class="item-container" style="width:120%">
-							<form action="/about">
+							</div>
+						</form>
+					</div>
+				</li>
+
+				<li style="float: none; display: inline-block; text-align:center">
+					<div class="item-container" style="width:100%">
+						<form action="/about">
 							<div class="item-top aits">About</div>
 							<div class="item-bottom w3l">
-								<button type="submit" id="btn2">About</button>
-								</div>
-							</form>
-						</div>
-						
-					</li>
-				</ul>
-			</nav>
-			<!-- //Navbar -->
-<script>
+								<button type="submit" id="btn2">About
+								</button>
+							</div>
+						</form>
+					</div>
+
+				</li>
+			</ul>
+		</nav>
+		<!-- //Navbar -->
+		<script>
 
 
-document.getElementById("btn1").disabled = false;
-document.getElementById("btn1").style.backgroundColor="#191919";
-document.getElementById("btn1").style.border="0px";
-document.getElementById("btn1").style.color="#38b8ff";
-document.getElementById("btn1").style.fontFamily="Arial, Helvetica, sans-serif";
-document.getElementById("btn1").style.fontSize="17px";
+			document.getElementById("btn1").disabled = false;
+			//document.getElementById("btn").style.visibility = "hidden";
+			document.getElementById("btn1").style.backgroundColor = "#191919";
+			document.getElementById("btn1").style.border = "0px";
+			document.getElementById("btn1").style.color = "#38b8ff";
+			document.getElementById("btn1").style.fontFamily = "Arial, Helvetica, sans-serif";
+			document.getElementById("btn1").style.fontSize = "17px";
 
-document.getElementById("btn2").disabled = false;
-document.getElementById("btn2").style.backgroundColor="#191919";
-document.getElementById("btn2").style.border="0px";
-document.getElementById("btn2").style.color="#38b8ff";
-document.getElementById("btn2").style.fontFamily="Arial, Helvetica, sans-serif";
-document.getElementById("btn2").style.fontSize="17px";				
-	</script>
+			document.getElementById("btn2").disabled = false;
+			//document.getElementById("btn").style.visibility = "hidden";
+			document.getElementById("btn2").style.backgroundColor = "#191919";
+			document.getElementById("btn2").style.border = "0px";
+			document.getElementById("btn2").style.color = "#38b8ff";
+			document.getElementById("btn2").style.fontFamily = "Arial, Helvetica, sans-serif";
+			document.getElementById("btn2").style.fontSize = "17px";				
+		</script>
 
 
 			<!-- Vertical-Grids -->
@@ -138,39 +140,42 @@ document.getElementById("btn2").style.fontSize="17px";
 								<div style="text-align:center">
 									 <h1>{{texto}}</h1>
 									  <h2 style="text-align: center; font-size:20px">{{subtitulo}}</h2>
+									  <img src="images/sol.png" width="128" height="128">
 									 <h2 style="text-align: center; font-size:40px">{{tempAtual}} ºC</h2>
-             <p style="font-size:20px; color:#00b5c7">SENSAÇÃO TÉRMICA</p>
+									 <br>
+									 <p>{{info}}</p><br>
+             <p style="font-size:20px; color:#00b5c7">THERMAL SENSATION</p>
 			 <p>{{textoTempAparente}}ºC</p>
-			  <p style="font-size:20px; color:#00b5c7">POSSIBILIDADE DE CHUVA</p>
+			  <p style="font-size:20px; color:#00b5c7">RAIN PROBABILITY</p>
              <p>{{textoPrecipitacao}}%</p>
-			 <p style="font-size:20px; color:#00b5c7">HUMIDADE</p>
+			 <p style="font-size:20px; color:#00b5c7">HUMIDITY</p>
              <p>{{textoHumidade}}%</p>
-			 <p style="font-size:20px; color:#00b5c7">VENTO</p>
+			 <p style="font-size:20px; color:#00b5c7">WIND SPEED</p>
 			 <p>sso {{textoVento}} mph</p>
-			 <p style="font-size:20px; color:#00b5c7">PRESSÃO</p>
+			 <p style="font-size:20px; color:#00b5c7">PRESSURE</p>
              <p>{{textoPressao}} hPa</p>
-			 <p style="font-size:20px; color:#00b5c7">ÍNDICE UV</p>
+			 <p style="font-size:20px; color:#00b5c7">UV INDEX</p>
              <p>{{textoUv}}</p>
-			  <p style="font-size:20px; color:#00b5c7">VISIBILIDADE</p>
+			  <p style="font-size:20px; color:#00b5c7">VISIBILITY</p>
              <p>{{textoVisibilidade}} mi</p>
 			 <br>
-			 <p>{{info}}</p>
+	
 		
 	
  <form action="/weather"><br>
- <p>Procura por outro local!</p>
+ <p>Search for another local!</p>
          <input type="text" name="local" placeholder="260 Broadway, New York City, NY">
-         <button type="submit">Envia!</button> 
+         <button type="submit">Insert!</button> 
         </form>
           </div>
 		  	<div>
 				  <br>
-			<h2>Guarda este local nos teus favoritos</h2>
-              <!--<form action="help.html"> --><button class="guardar">Guardar</button><!--</form>-->
+			<h2>Save this place in your favorites</h2>
+              <!--<form action="help.html"> --><button class="guardar">Save</button><!--</form>-->
               <div class="container">
       <form method="post" class="form-horizontal">
           <fieldset>
-            <legend>Favoritos</legend>         
+            <legend>Favorites</legend>         
           </fieldset>                        
           <div class="row">
             <div class="col-md-6">
@@ -280,40 +285,40 @@ document.getElementById("btn2").style.fontSize="17px";
 
 						<div class="weather-bottom agileits w3layouts">
 							<ul>
-								<li><h4>DOM</h4>
+								<li><h6>DOM</h6>
 								
 									<h5>{{texto11}}</h5>
-									<h6>{{texto12}}</h6>
+									<h5>{{texto12}}</h5>
 								</li>
-								<li><h4>SEG</h4>
+								<li><h6>SEG</h6>
 									
 									<h5>{{texto13}}</h5>
-									<h6>{{texto14}}</h6>
+									<h5>{{texto14}}</h5>
 								</li>
-								<li class="bg agileits w3layouts"><h4>TER</h4>
+								<li class="bg agileits w3layouts"><h6>TER</h6>
 									
 									<h5>{{texto15}}</h5>
-									<h6>{{texto16}}</h6>
+									<h5>{{texto16}}</h5>
 								</li>
-								<li><h4>QUA</h4>
+								<li><h6>QUA</h6>
 								
 									<h5>{{texto17}}</h5>
-									<h6>{{texto18}}</h6>
+									<h5>{{texto18}}</h5>
 								</li>
-                <li><h4>QUI</h4>
+                <li><h6>QUI</h6>
 				
 									<h5>{{texto19}}</h5>
-									<h6>{{texto20}}</h6>
+									<h5>{{texto20}}</h5>
 								</li>
-                <li><h4>SEX</h4>
+                <li><br><h6>SEX</h6>
 				
 									<h5>{{texto21}}</h5>
-									<h6>{{texto22}}</h6>
+									<h5>{{texto22}}</h5>
 								</li>
-								<li><h4>SÁB</h4>
+								<li><br><h6>SÁB</h6>
 								
 									<h5>{{texto9}}</h5>
-									<h6>{{texto10}}</h6>
+									<h5>{{texto10}}</h5>
 								</li>
                 
 							</ul>
@@ -325,16 +330,6 @@ document.getElementById("btn2").style.fontSize="17px";
 
 		</div>
 		<!-- //Wrap -->
-
-
-
-		<!-- Copyright -->
-		<div class="copyright agileits w3layouts">
-			<p> &copy; 2016 Collective UI Kit. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank"> W3layouts </a></p>
-		</div>
-		<!-- //Copyright -->
-
-
 
 		<!-- Custom-JavaScript-File-Links -->
 
@@ -432,14 +427,25 @@ document.getElementById("btn2").style.fontSize="17px";
 			<!-- //Smooth-Scrolling-JavaScript -->
 
 		<!-- //Custom-JavaScript-File-Links -->
+	<div class="vertical-grid-2" style="width:100%; margin-bottom:50px">
+		<!-- Copyright -->
+		<div class="copyright agileits w3layouts">
+			<p style="font-size:15px"> &copy; 2016 Collective UI Kit. All Rights Reserved | Design by
+				<a href="http://w3layouts.com/" target="_blank"> W3layouts </a>
+			</p>
+		</div>
+		<!-- //Copyright -->
+		<footer style="font-size: 15px; color:white; text-align:center">
+			Copyright Isabel Gonçalves and Mariana Braga - 2018
+			<!-- esta frase vai ficar em todas as paginas -->
+		</footer>
+
+	</div>
 
 	
    
        
     </body>
-    <footer>
-        Copyright Isabel Gonçalves and Mariana Braga - 2018 <!-- esta frase vai ficar em todas as paginas -->
-    </footer>
-
+ 
 </html>
          
