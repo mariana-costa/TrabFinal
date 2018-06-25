@@ -30,85 +30,86 @@ if(date > 12 && date < 20){
 
 var d = new Date();
 var ndia = d.getDay();
-var ndiaSemana = "";
+var ndiaHoje = "";
 var ndiaAmanha = "";
 var ndiaAmanha2 = "";
 var ndiaAmanha3 = "";
 var ndiaAmanha4 = "";
 var ndiaAmanha5 = "";
 var ndiaAmanha6 = "";
-if(ndia == 0){
-    ndiaSemana = "Domingo"
 
-    ndiaAmanha = "Segunda"
-    ndiaAmanha2 = "Terça"
-    ndiaAmanha3 = "Quarta"
-    ndiaAmanha4 = "Quinta"
-    ndiaAmanha5 = "Sexta"
-    ndiaAmanha6 = "Sábado"
+if(ndia == 0){
+    ndiaHoje = "Sunday"
+
+    ndiaAmanha = "Monday"
+    ndiaAmanha2 = "Tuesday"
+    ndiaAmanha3 = "Wednesday"
+    ndiaAmanha4 = "Thursday"
+    ndiaAmanha5 = "Friday"
+    ndiaAmanha6 = "Saturday"
 }
 if(ndia == 1){
-    ndiaSemana = "Segunda"
+    ndiaHoje = "Monday"
 
-    ndiaAmanha = "Segunda"
-    ndiaAmanha2 = "Terça"
-    ndiaAmanha3 = "Quarta"
-    ndiaAmanha4 = "Quinta"
-    ndiaAmanha5 = "Sexta"
-    ndiaAmanha6 = "Sábado"
+    ndiaAmanha = "Tuesday"
+    ndiaAmanha2 = "Wednesday"
+    ndiaAmanha3 = "Thursday"
+    ndiaAmanha4 = "Friday"
+    ndiaAmanha5 = "Saturday"
+    ndiaAmanha6 = "Sunday"
 }
 if(ndia == 2){
-    ndiaSemana = "Terça"
+    ndiaHoje = "Tuesday"
 
-    ndiaAmanha = "Segunda"
-    ndiaAmanha2 = "Terça"
-    ndiaAmanha3 = "Quarta"
-    ndiaAmanha4 = "Quinta"
-    ndiaAmanha5 = "Sexta"
-    ndiaAmanha6 = "Sábado"
+    ndiaAmanha = "Wednesday"
+    ndiaAmanha2 = "Thursday"
+    ndiaAmanha3 = "Friday"
+    ndiaAmanha4 = "Saturday"
+    ndiaAmanha5 = "Sunday"
+    ndiaAmanha6 = "Monday"
 }
 if(ndia == 3){
-    ndiaSemana = "Quarta"
+    ndiaHoje = "Wednesday"
 
-    ndiaAmanha = "Segunda"
-    ndiaAmanha2 = "Terça"
-    ndiaAmanha3 = "Quarta"
-    ndiaAmanha4 = "Quinta"
-    ndiaAmanha5 = "Sexta"
-    ndiaAmanha6 = "Sábado"
+    ndiaAmanha = "Thursday"
+    ndiaAmanha2 = "Friday"
+    ndiaAmanha3 = "Saturday"
+    ndiaAmanha4 = "Domimgo"
+    ndiaAmanha5 = "Monday"
+    ndiaAmanha6 = "Tuesday"
 }
 if(ndia == 4){
-    ndiaSemana = "Quinta"
+    ndiaHoje = "Thursday"
 
-    ndiaAmanha = "Segunda"
-    ndiaAmanha2 = "Terça"
-    ndiaAmanha3 = "Quarta"
-    ndiaAmanha4 = "Quinta"
-    ndiaAmanha5 = "Sexta"
-    ndiaAmanha6 = "Sábado"
+    ndiaAmanha = "Friday"
+    ndiaAmanha2 = "Saturday"
+    ndiaAmanha3 = "Sunday"
+    ndiaAmanha4 = "Monday"
+    ndiaAmanha5 = "Tuesday"
+    ndiaAmanha6 = "Wednesday"
 }
 if(ndia == 5){
-    ndiaSemana = "Sexta"
+    ndiaHoje = "Friday"
 
-    ndiaAmanha = "Segunda"
-    ndiaAmanha2 = "Terça"
-    ndiaAmanha3 = "Quarta"
-    ndiaAmanha4 = "Quinta"
-    ndiaAmanha5 = "Sexta"
-    ndiaAmanha6 = "Sábado"
+    ndiaAmanha6 = "Saturday"
+    ndiaAmanha = "Sunday"
+    ndiaAmanha2 = "Monday"
+    ndiaAmanha3 = "Trça"
+    ndiaAmanha4 = "Wednesday"
+    ndiaAmanha5 = "Thursday"
 }
 if(ndia == 6){
-    ndiaSemana = "Sábado"
+    ndiaHoje = "Saturday"
 
-    ndiaAmanha = "Segunda"
-    ndiaAmanha2 = "Terça"
-    ndiaAmanha3 = "Quarta"
-    ndiaAmanha4 = "Quinta"
-    ndiaAmanha5 = "Sexta"
-    ndiaAmanha6 = "Sábado"
+    ndiaAmanha = "Sunday"
+    ndiaAmanha2 = "Monday"
+    ndiaAmanha3 = "Tuesday"
+    ndiaAmanha4 = "Wednesday"
+    ndiaAmanha5 = "Thursday"
+    ndiaAmanha6 = "Friday"
 }
 
-console.log(ndiaSemana);
+console.log(ndiaHoje);
 
 app.get('/', (request, response) => {
     response.render('index.hbs', {
@@ -174,7 +175,7 @@ app.get('/weather', (req, resp) => {
     resp.render('meteo.hbs', {texto: req.query.local, textoTempAparente: apparentTemperature, textoHumidade: humidade, textoPrecipitacao: precipitacao, texto8: req.query.local, 
     texto9: SetimoHigh, texto10: SetimoLow, texto11: PrimeiroHigh, texto12: PrimeiroLow,  texto13: SegundoHigh, texto14: SegundoLow, texto15: TerceiroHigh, texto16: TerceiroLow,
     texto17: QuartoHigh, texto18: QuartoLow, texto19: QuintoHigh, texto20: QuintoLow, texto21: SextoHigh, texto22: SextoLow, tempAtual: temperature, info: "It's " + temperature + " ºC, the maximum temperature expected for today is " + PrimeiroHigh  + " ºC.",
-    subtitulo: summary, textoVento: vento, textoUv: uvIndex, textoPressao: pressao, textoVisibilidade: visibilidade, hoje: ndiaSemana, amanha: ndiaSemana, amanha2: ndiaSemana, amanha3: ndiaSemana, amanha4: ndiaSemana, amanha5: ndiaSemana, amanha6: ndiaSemana
+    subtitulo: summary, textoVento: vento, textoUv: uvIndex, textoPressao: pressao, textoVisibilidade: visibilidade, hoje: ndiaHoje, amanha: ndiaAmanha, amanha2: ndiaAmanha2, amanha3: ndiaAmanha3, amanha4: ndiaAmanha4, amanha5: ndiaAmanha5, amanha6: ndiaAmanha6
 });
 
                  });
