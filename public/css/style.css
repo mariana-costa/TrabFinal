@@ -191,7 +191,7 @@ nav ul li {
 	top: 0;
 	position: relative;
 	height: 120px;
-	cursor: pointer;
+	/*cursor: pointer; */
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -961,7 +961,18 @@ i.icon-1 {
 /*-- Date-And-Time-Widget --*/
 
 .weather-widget {
-	background: url("../images/sun.jpg");
+	background: url("../images/temp.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	font-family: 'Roboto', sans-serif;
+}
+
+#temp {
+	background: url("../images/temp.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;

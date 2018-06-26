@@ -64,13 +64,9 @@
 </head>
 <!-- //Head -->
 
-
-
 <!-- Body -->
 
 <body onload="startTime()">
-
-
 
 	<!-- Wrap -->
 	<div class="wrap">
@@ -78,19 +74,22 @@
 		<!-- Navbar -->
 		<nav style="width: 100%; text-align: center; margin-top: 0px">
 			<ul>
-		<!-- logo -->
-		<div>
+				<!-- logo -->
 				<li>
-					<img src="images/logotipo.png" style= "width:60px">
+					<div>
+
+						<img src="images/logotipo.png" style="width:60px; padding-top: 5px">
+
+					</div>
 				</li>
-		</div>
+				<!-- //logo -->
 
 				<li style="float: none; display: inline-block; text-align:center">
 					<div class="item-container" style="width:100%">
 						<form action="/">
 							<div class="item-top aits">Home</div>
 							<div class="item-bottom w3l">
-								<button type="submit" id="btn1">Home</button>
+								<button type="submit" id="btn1" style="cursor: pointer">Home</button>
 							</div>
 						</form>
 					</div>
@@ -101,7 +100,7 @@
 						<form action="/about">
 							<div class="item-top aits">About</div>
 							<div class="item-bottom w3l">
-								<button type="submit" id="btn2">About</button>
+								<button type="submit" id="btn2" style="cursor: pointer">About</button>
 							</div>
 						</form>
 					</div>
@@ -111,8 +110,6 @@
 		</nav>
 		<!-- //Navbar -->
 		<script>
-
-
 			document.getElementById("btn1").disabled = false;
 			//document.getElementById("btn").style.visibility = "hidden";
 			document.getElementById("btn1").style.backgroundColor = "#191919";
@@ -167,9 +164,9 @@
 					<div class="upload-form w3layouts">
 						<div>
 							<p>Search for a place to see the weather</p>
-							<form action="/weather">
+							<form action="/weather" onsubmit="return comecarFuncao()">
 								<div>
-									<input type="text" name="local" placeholder="260 Broadway, New York City, NY">
+									<input type="text" id="insert" name="local" placeholder="New York" style="color:#00b5c7; background-color:white; border-radius: 8px; font-size: 18px; border: none">
 								</div>
 								<div>
 									<button type="submit" style="width: 32px; height: 32px; background-color: transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none">
@@ -181,7 +178,24 @@
 					</div>
 				</div>
 				<!-- //File-Upload-Widget -->
+				<script>
+					var insert;
 
+					function comecarFuncao() {
+						insert = document.getElementById("insert").value;
+						submitOK = "true";
+
+						if (insert.length <= 0) {
+							alert("You have to put a local!");
+							submitOK = "false";
+						}
+
+						if (submitOK == "false") {
+							return false;
+						}
+					}
+
+				</script>
 
 
 				<!-- Calender-Widget -->
@@ -335,12 +349,8 @@
 
 				</div>
 				<!-- //Calender-Widget -->
-
-
 			</div>
 			<!-- //Vertical-Grid-1 -->
-
-
 
 			<!-- Vertical-Grid-2 -->
 			<div class="vertical-grid-2">
@@ -348,15 +358,12 @@
 				<!-- Current-Weather-Widget -->
 				<div class="weather-widget">
 					<div class="place">
-						<!--<div id="iconetime">
-
-</div> -->
-						<div>
-							<br>
-							<h1 style="font-size:40px">{{texto7}}</h1>
-						</div>
-
 						<div class="dmy">
+							<div>
+								<br>
+								<h1 style="font-size:40px">{{texto7}}</h1>
+							</div>
+
 							<script type="text/javascript">
 								var mydate = new Date()
 								var year = mydate.getYear()
@@ -377,9 +384,7 @@
 
 					</div>
 
-
-
-					<div class="weather-bottom">
+					<!-- <div class="weather-bottom">
 						<ul>
 							<li class="bg agileits w3layouts">
 								<h4>DOM</h4>
@@ -423,32 +428,141 @@
 							</li>
 						</ul>
 						<div class="clear"> </div>
-					</div>
+					</div> -->
 				</div>
 				<!-- //Current-Weather-Widget -->
 
+				<!-- File-Upload-Widget -->
+				<div class="upload">
+					<div class="upload-form w3layouts">
+						<div>
+							<h2 style="font-size:20px">Favorites</h2>
+
+						</div>
+
+					</div>
+					<div class="container">
+
+
+						<form action="/getFavorite" class="form-horizontal" onsubmit="return comboempty()">
+							<div class="row">
+								<div class="col-md-6">
+									<p id="cidades-list-text">There aren't locals added</p>
+									<select id="cidades-list" name="comboBox" style="text-align-last:center; color:#00b5c7; background-color:white; border-radius: 8px; font-size: 18px; padding: 5px 35px; border: none">
+									</select>
+								</div>
+							</div>
+							<div class="form-group" style="padding-top:10px">
+								<button type="submit" id="submit" style="cursor: pointer; background-color:#00b5c7; color:white; border-radius: 8px; font-size: 16px; padding: 10px 16px; border: none">Search</button>
+								<button type="reset" id="clean" style="cursor: pointer; background-color:#00b5c7; color:white; border-radius: 8px; font-size: 16px; padding: 10px 16px; border: none">Clean favorite</button>
+								<button type="reset" id="cleanAll" style="cursor: pointer; background-color:#00b5c7; color:white; border-radius: 8px; font-size: 16px; padding: 10px 16px; border: none">Clean all favorites</button>
+							</div>
+						</form>
+					</div>
+
+					<!-- include jQuery library -->
+					<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+					 crossorigin="anonymous"></script>
+
+					<script>
+						$(document).ready(function () {
+
+							if (localStorage) {
+
+								var cidadesFavoritas = localStorage.getItem('cidadesFavoritas');
+								if (cidadesFavoritas) { //se o item existir 
+									$("#cidades-list-text").hide();
+									$("#cidades-list").show();
+									var cidades = JSON.parse(cidadesFavoritas);
+									console.log(cidades);
+									$.each(cidades, (index, text) => { //each vai a cada elemento do array
+										$("#cidades-list").append(`<option value="${text}">${text}</option>`);
+									});
+								}
+							}
+							else {
+								$("#cidades-list-text").show();
+								$("#cidades-list").hide();
+							}
+						});
+
+						$("#cleanAll").click(function () {
+							if (localStorage.getItem('cidadesFavoritas')) {
+								console.log('cleaning!...');
+								localStorage.clear();
+								location.reload();
+							}
+							else {
+								window.alert("You don´t have favorites yet!")
+							}
+						})
+
+						$("#clean").click(function () {
+							if (localStorage.getItem('cidadesFavoritas')) {
+								var cidadesFavoritas = localStorage.getItem('cidadesFavoritas');
+								var cidades = [];
+								var cityClean = $("#cidades-list").val();
+								if (cidadesFavoritas) {
+									cidades = JSON.parse(cidadesFavoritas);
+								}
+
+								for (var i = 0; i < cidades.length; i++) {
+									if (cityClean == cidades[i]) {
+										cidades.splice(i, 1);
+									}
+								}
+								localStorage.setItem('cidadesFavoritas', JSON.stringify(cidades));
+								location.reload();
+							}
+							else {
+								window.alert("You don´t have favorites yet!");
+							}
+						})
+
+
+						var combo;
+
+						function comboempty() {
+							combo = document.getElementById("cidades-list").value;
+							submitOK = "true";
+
+							if (combo.length <= 0) {
+								alert("You don't have favorites yet!");
+								submitOK = "false";
+							}
+
+							if (submitOK == "false") {
+								return false;
+							}
+						}
+
+
+					</script>
+
+				</div>
+				<!-- //File-Upload-Widget -->
 
 			</div>
-			<!-- //Wrap -->
 
-			<!-- Custom-JavaScript-File-Links -->
 
-			<!-- Default-JavaScript -->
+			<!--Custom - JavaScript - File - Links-->
+
+			<!--Default - JavaScript-->
 			<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 
 			<!-- Slider-JavaScript -->
-				<script src="js/responsiveslides.min.js"></script>
-				<script>
-					$(function () {
-						$("#slider, #slider2").responsiveSlides({
-							auto: true,
-							nav: true,
-							speed: 1500,
-							namespace: "callbacks",
-							pager: true,
-						});
+			<script src="js/responsiveslides.min.js"></script>
+			<script>
+				$(function () {
+					$("#slider, #slider2").responsiveSlides({
+						auto: true,
+						nav: true,
+						speed: 1500,
+						namespace: "callbacks",
+						pager: true,
 					});
-				</script>
+				});
+			</script>
 			<!-- //Slider-JavaScript -->
 
 			<!-- File-Upload-Widget-JavaScript -->
@@ -528,32 +642,35 @@
 			</script>
 			<!-- //Smooth-Scrolling-JavaScript -->
 
+
+
+
 			<!-- //Custom-JavaScript-File-Links -->
-			<div class="vertical-grid-2" style="width:100%; margin-bottom:50px">
-				<!-- Copyright -->
-				<div class="copyright agileits w3layouts">
-					<p style="font-size:15px"> &copy; 2016 Collective UI Kit. All Rights Reserved | Design by
-						<a href="http://w3layouts.com/" target="_blank"> W3layouts </a>
-					</p>
-				</div>
-				<!-- //Copyright -->
-				<footer style="font-size: 15px; color:white; text-align:center">
-					Copyright Isabel Gonçalves and Mariana Braga - 2018
-					<!-- esta frase vai ficar em todas as paginas -->
-				</footer>
 
-<!-- logo -->
-		<div>
-				<li>
-					<img src="images/logotipo.png" style= "width:60px; margin-left:520px; margin-top:8px">
-				</li>
 		</div>
-
+		<div class="vertical-grid-2" style="width:100%; margin-bottom:50px">
+			<!-- Copyright -->
+			<div class="copyright agileits w3layouts">
+				<p style="font-size:15px"> &copy; 2016 Collective UI Kit. All Rights Reserved | Design by
+					<a href="http://w3layouts.com/" target="_blank"> W3layouts </a>
+				</p>
 			</div>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" crossorigin="anonymous"></script>
-			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-			 crossorigin="anonymous"></script>
-</body>
+			<!-- //Copyright -->
+			<footer style="font-size: 15px; color:white; text-align:center">
+				Copyright Isabel Gonçalves and Mariana Braga - 2018
+				<!-- esta frase vai ficar em todas as paginas -->
+			</footer>
 
+			<!-- logo -->
+			<div>
+				<li>
+					<img src="images/logotipo.png" style="width:60px; display: block; margin-left: auto; margin-right: auto">
+				</li>
+			</div>
+			<!-- //logo -->
+		</div>
+	</div>
+	<!-- //Wrap -->
+</body>
 
 </html>

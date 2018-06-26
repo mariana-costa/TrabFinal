@@ -1,91 +1,87 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="uf8">
-        <title>Meteo</title>
-         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-        <style>
-             h1{
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 40px;
-            }
-            h2{
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 10px;
-            }
-             h3{
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 14px;
-                color: blueviolet;
-            }
-        </style>
-  
-         
-             	<!-- Meta-Tags -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="keywords" content="Collective UI Kit Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<head>
+	<meta charset="uf8">
+	<title>Meteo</title>
+
+
+	<!-- Meta-Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="keywords" content="Collective UI Kit Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
+	/>
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<!-- //Meta-Tags -->
 
 	<!-- Custom-Stylesheet-Links -->
-		<link rel="stylesheet" href="css/style.css" 														type="text/css" media="all">
-		<link rel="stylesheet" href="css/clndr.css" 														type="text/css" media="all">
-		<link rel="stylesheet" href="css/acornmediaplayer.base.css" 										type="text/css" media="all">
-		<link rel="stylesheet" href="acornmediaplayer/acorn.access.css" 									type="text/css" media="all">
-		<link rel="stylesheet" href="css/audio.css" 														type="text/css" media="all">
-		<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" 		type="text/css" media="all">
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" 	type="text/css" media="all">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/clndr.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/acornmediaplayer.base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="acornmediaplayer/acorn.access.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/audio.css" type="text/css" media="all">
+	<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" type="text/css" media="all">
 	<!-- //Custom-Stylesheet-Links -->
 
 	<!-- Web-Fonts -->
-		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" 		type="text/css" media="all">
-		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" 			type="text/css" media="all">
-		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100" 	type="text/css" media="all">
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" type="text/css" media="all">
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" type="text/css" media="all">
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100" type="text/css" media="all">
 	<!-- //Web-Fonts -->
 
 	<!-- Time-JavaScript -->
-		<script>
-			function startTime() {
-				var today = new Date();
-				var h = today.getHours();
-				var m = today.getMinutes();
-				var s = today.getSeconds();
-				m = checkTime(m);
-				s = checkTime(s);
-				document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
-				var t = setTimeout(startTime, 500);
-			}
-			function checkTime(i) {
-				if (i < 10) {i = "0" + i};
-				return i;
-			}
-		</script>
+	<script>
+		function startTime() {
+			var today = new Date();
+			var h = today.getHours();
+			var m = today.getMinutes();
+			var s = today.getSeconds();
+			m = checkTime(m);
+			s = checkTime(s);
+			document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+			var t = setTimeout(startTime, 500);
+		}
+		function checkTime(i) {
+			if (i < 10) { i = "0" + i };
+			return i;
+		}
+	</script>
 	<!-- //Time-JavaScript -->
 
 	<!-- Chart -->
-		<script src="js/Chart.js"></script>
+	<script src="js/Chart.js"></script>
 	<!-- //Chart -->
 
 </head>
 <!-- //Head -->
 
 <!-- Body -->
-	<body onload="startTime()">
-		
-		<!-- Wrap -->
+
+<body onload="startTime()">
+
+	<!-- Wrap -->
 	<div class="wrap">
 
 		<!-- Navbar -->
 		<nav style="width: 100%; text-align: center; margin-top: 0px">
 			<ul>
+				<!-- logo -->
+				<li>
+					<div>
+
+						<img src="images/logotipo.png" style="width:60px; padding-top: 5px">
+
+					</div>
+				</li>
+				<!-- //logo -->
+
 				<li style="float: none; display: inline-block; text-align:center">
 					<div class="item-container" style="width:100%">
 						<form action="/">
 							<div class="item-top aits">Home</div>
 							<div class="item-bottom w3l">
-								<button type="submit" id="btn1">Home</button>
+								<button type="submit" id="btn1" style="cursor: pointer">Home</button>
 							</div>
 						</form>
 					</div>
@@ -96,8 +92,7 @@
 						<form action="/about">
 							<div class="item-top aits">About</div>
 							<div class="item-bottom w3l">
-								<button type="submit" id="btn2">About
-								</button>
+								<button type="submit" id="btn2" style="cursor: pointer">About</button>
 							</div>
 						</form>
 					</div>
@@ -107,8 +102,6 @@
 		</nav>
 		<!-- //Navbar -->
 		<script>
-
-
 			document.getElementById("btn1").disabled = false;
 			//document.getElementById("btn").style.visibility = "hidden";
 			document.getElementById("btn1").style.backgroundColor = "#191919";
@@ -126,326 +119,327 @@
 			document.getElementById("btn2").style.fontSize = "17px";				
 		</script>
 
+		<!-- Vertical-Grids -->
+		<div class="vertical-grids">
 
-			<!-- Vertical-Grids -->
-			<div class="vertical-grids">
+			<!-- Vertical-Grid-1 -->
+			<div class="vertical-grid-1">
 
-				<!-- Vertical-Grid-1 -->
-				<div class="vertical-grid vertical-grid-1 agileits w3layouts">
+				<!-- File-Upload-Widget -->
+				<div class="upload">
+					<div class="upload-form w3layouts">
 
-					<!-- File-Upload-Widget -->
-					<div class="upload agileits w3layouts">
-						<div class="upload-form agileits w3layouts">
-							
-								<div style="text-align:center">
-									 <h1>{{texto}}</h1>
-									  <h2 style="text-align: center; font-size:20px">{{subtitulo}}</h2>
-									  <img src="images/pcloudy.png" id="iconeweather" width="128" height="128">
-									 <h2 style="text-align: center; font-size:40px">{{tempAtual}} ºC</h2>
-									 <br>
-									 <p>{{info}}</p><br>
-             <p style="font-size:20px; color:#00b5c7">THERMAL SENSATION</p>
-			 <p>{{textoTempAparente}}ºC</p>
-			  <p style="font-size:20px; color:#00b5c7">RAIN PROBABILITY</p>
-             <p>{{textoPrecipitacao}}%</p>
-			 <p style="font-size:20px; color:#00b5c7">HUMIDITY</p>
-             <p>{{textoHumidade}}%</p>
-			 <p style="font-size:20px; color:#00b5c7">WIND SPEED</p>
-			 <p>sso {{textoVento}} mph</p>
-			 <p style="font-size:20px; color:#00b5c7">PRESSURE</p>
-             <p>{{textoPressao}} hPa</p>
-			 <p style="font-size:20px; color:#00b5c7">UV INDEX</p>
-             <p>{{textoUv}}</p>
-			  <p style="font-size:20px; color:#00b5c7">VISIBILITY</p>
-             <p>{{textoVisibilidade}} mi</p>
-			 <br>
-	
-		
-	
- <form action="/weather"><br>
- <p>Search for another local!</p>
-         <input type="text" name="local" placeholder="260 Broadway, New York City, NY">
-         <button type="submit">Insert!</button> 
-        </form>
-          </div>
-		  	<div>
-				  <br>
-			<h2>Save this place in your favorites</h2>
-              <!--<form action="help.html"> --><button class="guardar">Save</button><!--</form>-->
-              <div class="container">
-      <form method="post" class="form-horizontal">
-          <fieldset>
-            <legend>Favorites</legend>         
-          </fieldset>                        
-          <div class="row">
-            <div class="col-md-6">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="label-item">Item</span>
-                </div>
-                <input type="text" class="form-control" id="item"/>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <p id="shooping-list-text">Nenhum Item Adicionado</p>
-              <ul class="list-group" id="shopping-list">
-              </ul>
-            </div>
-          </div>
-          <div class="form-group">
-            <button type="submit" id="submit" class="btn btn-primary">Adicionar</button>
-            <button type="reset" id="clean"  class="btn btn-secondary">Limpar lista</button>
-        </div>
-      </form>
-    </div>
-    
-    <!-- include jQuery library -->
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script>
-    $(document).ready(function () {
-
-       $("#shopping-list").hide();
-       $("#item").focus();
-
-      /*
-       * check browser supports local storage
-       */
-      if (localStorage) {
-
-        var shoppingList_string = localStorage.getItem('shoppingList');
-        if (shoppingList_string) { //se o item existir 
-          $("#shooping-list-text").hide(); 
-          $("#shopping-list").show();
-          var shoppingList = JSON.parse(shoppingList_string);
-          console.log(shoppingList);
-          $.each(shoppingList, (index, text) => { //each vai a cada elemento do array
-            $("#shopping-list").append(`<li class="list-group-item">${text}</li>`);
-          });
-        }
-        
-        $("form")
-          /*
-           * clear local storage when the form is reseted
-           */
-           //quando o utilizador carregar no botao de reset, faz um clear do localStorage e um clear à pagina
-          .on('reset', function(){
-            console.log('cleaning!...');
-            localStorage.clear();
-            location.reload();
-          })
-          /*
-           * add to local storage when the form is submitted
-           */
-           .submit(function(){
-            var shoppingList_string = localStorage.getItem('shoppingList');
-            var shoppingList =[];
-
-            if(shoppingList_string) {
-              shoppingList = JSON.parse(shoppingList_string);
-            }
-            shoppingList.push($("#item").val());
-            localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
-            console.log(localStorage);
-          })
-      }
-    });
-    </script>
-      
-          </div>
-		  </div>
-		  
-		  </div>
-		  </div>
-			
-		  </div>
-		  </div>
-				<!-- //Vertical-Grid-1 -->
-
-
-
-				<!-- Vertical-Grid-2 -->
-				<div class="vertical-grid agileits w3layouts vertical-grid-2">
-
-					<!-- Current-Weather-Widget -->
-					<div class="weather-widget agileits w3layouts">
-						<div class="place agileits w3layouts">
-
-							<div class="city agileits w3layouts">
-								  <p>{{texto8}}</p>
-							</div>
-							
-							
-
+						<div style="text-align:center">
+							<h1 id="cidadeValor">{{texto}}</h1>
+							<h2 style="text-align: center; font-size:20px">{{subtitulo}}</h2>
+							<!-- <img src="images/pcloudy.png" id="iconeweather" width="108" height="108"> -->
+							{{!-- <div id="iconeTempo" value="{{icone1}}"></div> --}}
+							<h2 style="text-align: center; font-size:40px">{{tempAtual}} ºC</h2>
+							<br>
+							<p>{{info}}</p>
+							<br>
+							<p style="font-size:20px; color:#00b5c7">THERMAL SENSATION</p>
+							<p>{{textoTempAparente}}ºC</p>
+							<p style="font-size:20px; color:#00b5c7">RAIN PROBABILITY</p>
+							<p>{{textoPrecipitacao}}%</p>
+							<p style="font-size:20px; color:#00b5c7">HUMIDITY</p>
+							<p>{{textoHumidade}}%</p>
+							<p style="font-size:20px; color:#00b5c7">WIND SPEED</p>
+							<p>sso {{textoVento}} mph</p>
+							<p style="font-size:20px; color:#00b5c7">PRESSURE</p>
+							<p>{{textoPressao}} hPa</p>
+							<p style="font-size:20px; color:#00b5c7">UV INDEX</p>
+							<p>{{textoUv}}</p>
+							<p style="font-size:20px; color:#00b5c7">VISIBILITY</p>
+							<p>{{textoVisibilidade}} mi</p>
+							<br>
 						</div>
+						<div>
+							<form action="/weather" onsubmit="return comecarFuncao()">
+								<br>
+								<p>Search for another local!</p>
+								<div>
+									<input type="text" id="insert" name="local" placeholder="New York" style="color:#00b5c7; background-color:white; border-radius: 8px; font-size: 18px; border: none">
+								</div>
+								<div>
+									<button type="submit" style="width: 32px; height: 32px; background-color: transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none">
+										<img src="images/search.png">
+									</button>
+								</div>
+							</form>
+						</div>
+						<div>
+							<br>
+							<h2 style="font-size:20px">Save this place in your favorites</h2>
+							<form2>
+								<button class="guardar" type="submit" id="guardar"  style="cursor: pointer; background-color:#00b5c7; color:white; border-radius: 8px; font-size: 16px; padding: 10px 16px; border: none">Save</button>
+							</form2>
 
-
-
-						<div class="weather-bottom agileits w3layouts">
-							<ul>
-								<li><h6>{{hoje}}</h6>
-								
-									<h5>{{texto11}}</h5>
-									<h5>{{texto12}}</h5>
-								</li>
-								<li><h6>{{amanha}}</h6>
-									
-									<h5>{{texto13}}</h5>
-									<h5>{{texto14}}</h5>
-								</li>
-								<li class="bg agileits w3layouts"><h6>{{amanha2}}</h6>
-									
-									<h5>{{texto15}}</h5>
-									<h5>{{texto16}}</h5>
-								</li>
-								<li><h6>{{amanha3}}</h6>
-								
-									<h5>{{texto17}}</h5>
-									<h5>{{texto18}}</h5>
-								</li>
-                <li><h6>{{amanha4}}</h6>
-				
-									<h5>{{texto19}}</h5>
-									<h5>{{texto20}}</h5>
-								</li>
-                <li><br><h6>{{amanha5}}</h6>
-				
-									<h5>{{texto21}}</h5>
-									<h5>{{texto22}}</h5>
-								</li>
-								<li><br><h6>{{amanha6}}</h6>
-								
-									<h5>{{texto9}}</h5>
-									<h5>{{texto10}}</h5>
-								</li>
-                
-							</ul>
-							<div class="clear"> </div>
 						</div>
 					</div>
-					<!-- //Current-Weather-Widget -->
+
+				</div>
+			</div>
+
+			<script>
+				var insert;
+
+				function comecarFuncao() {
+					insert = document.getElementById("insert").value;
+					submitOK = "true";
+
+					if (insert.length <= 0) {
+						alert("You have to put a local!");
+						submitOK = "false";
+					}
+
+					if (submitOK == "false") {
+						return false;
+					}
+				}
+
+			</script>
 
 
-		</div>
-		<!-- //Wrap -->
+			<!-- include jQuery library -->
+			<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			 crossorigin="anonymous"></script>
 
-		<!-- Custom-JavaScript-File-Links -->
+			<script>
 
-			<!-- Default-JavaScript --> <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+				var city = $("#cidadeValor").html();
+
+				var existe = false;
+
+				$("#guardar").click(function () {
+
+					console.log("TCM")
+					var cidadesFavoritas = localStorage.getItem('cidadesFavoritas');
+					var cidades = [];
+
+					if (cidadesFavoritas) {
+						cidades = JSON.parse(cidadesFavoritas);
+					} //o item é um input do tipo texto
+					for (var i = 0; i < cidades.length; i++) {
+						if (city == cidades[i]) {
+							existe = true;
+							break;
+						}
+						else {
+							existe = false;
+						}
+					}
+
+					if (existe == true) {
+						window.alert("You already have that city in your favorites")
+					}
+					else {
+						cidades.push(city);
+						localStorage.setItem('cidadesFavoritas', JSON.stringify(cidades));
+						console.log(localStorage);
+						window.alert("Your local has been added to your favorites in the Home page")
+					}
+				})
+			</script>
+
+
+			<!-- //Vertical-Grid-1 -->
+
+			<!-- Vertical-Grid-2 -->
+			<div class="vertical-grid-2">
+
+				<!-- Current-Weather-Widget -->
+				<div id="temp">
+					<div class="place">
+
+						<div class="city agileits w3layouts">
+							<p>{{texto8}}</p>
+						</div>
+					</div>
+
+					<div class="weather-bottom">
+						<ul>
+							<li>
+								<h6>{{hoje}}</h6>
+
+								<h5>{{texto11}}º</h5>
+								<h5 style="color:grey; font-weight: 400">{{texto12}}º</h5>
+							</li>
+							<li>
+								<h6>{{amanha}}</h6>
+
+								<h5>{{texto13}}º</h5>
+								<h5 style="color:grey; font-weight: 400">{{texto14}}º</h5>
+							</li>
+							<li class="bg agileits w3layouts">
+								<h6>{{amanha2}}</h6>
+
+								<h5>{{texto15}}º</h5>
+								<h5 style="color:grey; font-weight: 400">{{texto16}}º</h5>
+							</li>
+							<li>
+								<h6>{{amanha3}}</h6>
+
+								<h5>{{texto17}}º</h5>
+								<h5 style="color:grey; font-weight: 400">{{texto18}}º</h5>
+							</li>
+							<li>
+								<h6>{{amanha4}}</h6>
+
+								<h5>{{texto19}}º</h5>
+								<h5 style="color:grey; font-weight: 400">{{texto20}}º</h5>
+							</li>
+							<li>
+								<br>
+								<h6>{{amanha5}}</h6>
+
+								<h5>{{texto21}}º</h5>
+								<h5 style="color:grey; font-weight: 400">{{texto22}}º</h5>
+							</li>
+							<li>
+								<br>
+								<h6>{{amanha6}}</h6>
+
+								<h5>{{texto9}}º</h5>
+								<h5 style="color:grey; font-weight: 400">{{texto10}}º</h5>
+							</li>
+
+						</ul>
+						<div class="clear"> </div>
+					</div>
+				</div>
+				<!-- //Current-Weather-Widget -->
+
+
+			</div>
+			<!-- //Wrap -->
+
+			<!-- Custom-JavaScript-File-Links -->
+
+			<!-- Default-JavaScript -->
+			<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 
 			<!-- Slider-JavaScript -->
-				<script src="js/responsiveslides.min.js"></script>
-				<script>
-					$(function () {
-						$("#slider, #slider2").responsiveSlides({
-							auto: true,
-							nav: true,
-							speed: 1500,
-							namespace: "callbacks",
-							pager: true,
-						});
+			<script src="js/responsiveslides.min.js"></script>
+			<script>
+				$(function () {
+					$("#slider, #slider2").responsiveSlides({
+						auto: true,
+						nav: true,
+						speed: 1500,
+						namespace: "callbacks",
+						pager: true,
 					});
-				</script>
+				});
+			</script>
 			<!-- //Slider-JavaScript -->
 
 
 			<!-- File-Upload-Widget-JavaScript -->
-				<!-- JavaScript-Includes -->
-				<script src="js/jquery.knob.js"></script>
-				<!-- JavaScript Includes -->
+			<!-- JavaScript-Includes -->
+			<script src="js/jquery.knob.js"></script>
+			<!-- JavaScript Includes -->
 
-				<!-- jQuery-File-Upload-Dependencies -->
-				<script src="js/jquery.ui.widget.js"></script>
-				<script src="js/jquery.iframe-transport.js"></script>
-				<script src="js/jquery.fileupload.js"></script>
-				<!-- //jQuery-File-Upload-Dependencies -->
+			<!-- jQuery-File-Upload-Dependencies -->
+			<script src="js/jquery.ui.widget.js"></script>
+			<script src="js/jquery.iframe-transport.js"></script>
+			<script src="js/jquery.fileupload.js"></script>
+			<!-- //jQuery-File-Upload-Dependencies -->
 
-				<!-- Main JavaScript file -->
-					<script src="js/script.js"></script>
-				<!-- Main JavaScript file -->
+			<!-- Main JavaScript file -->
+			<script src="js/script.js"></script>
+			<!-- Main JavaScript file -->
 			<!-- //File-Upload-Widget-JavaScript -->
 
 			<!-- Weather-Widget-JavaScript -->
-				<script src="js/skycons.js"></script>
-				<script>
-					var icons = new Skycons({"color": "#FFD700"}),
-					list  = [
+			<script src="js/skycons.js"></script>
+			<script>
+				var icons = new Skycons({ "color": "#FFD700" }),
+					list = [
 						"clear-day"
 					],
 					i;
-					for(i = list.length; i--; )
+				for (i = list.length; i--;)
 					icons.set(list[i], list[i]);
-					icons.play();
-				</script>
-				<script>
-					var icons = new Skycons({"color": "#f5f5f5"}),
+				icons.play();
+			</script>
+			<script>
+				var icons = new Skycons({ "color": "#f5f5f5" }),
 					list = [
-						"clear-night", "partly-cloudy-day",	"partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind", "fog"
+						"clear-night", "partly-cloudy-day", "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind", "fog"
 					],
 					i;
-					for(i = list.length; i--; )
+				for (i = list.length; i--;)
 					icons.set(list[i], list[i]);
-					icons.play();
-				</script>
+				icons.play();
+			</script>
 			<!--//Weather-Widget-JavaScript -->
 
-		
+
 			<!-- Calender-JavaScript -->
-				<script src="js/underscore-min.js"></script>
-				<script src= "js/moment-2.2.1.js"></script>
-				<script src="js/clndr.js"></script>
-				<script src="js/site.js"></script>
+			<script src="js/underscore-min.js"></script>
+			<script src="js/moment-2.2.1.js"></script>
+			<script src="js/clndr.js"></script>
+			<script src="js/site.js"></script>
 			<!-- //Calender-JavaScript -->
 
 			<!-- Slide-To-Top JavaScript -->
-				<script type="text/javascript">
-					$(document).ready(function() {
-						var defaults = {
-							containerID: 'toTop',
-							containerHoverID: 'toTopHover',
-							scrollSpeed: 100,
-							easingType: 'linear',
-						};
-						$().UItoTop({ easingType: 'easeOutQuart' });
-					});
-				</script>
-				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 0;"> </span></a>
+			<script type="text/javascript">
+				$(document).ready(function () {
+					var defaults = {
+						containerID: 'toTop',
+						containerHoverID: 'toTopHover',
+						scrollSpeed: 100,
+						easingType: 'linear',
+					};
+					$().UItoTop({ easingType: 'easeOutQuart' });
+				});
+			</script>
+			<a href="#" id="toTop" style="display: block;">
+				<span id="toTopHover" style="opacity: 0;"> </span>
+			</a>
 			<!-- //Slide-To-Top JavaScript -->
 
 			<!-- Smooth-Scrolling-JavaScript -->
-				<script type="text/javascript" src="js/move-top.js"></script>
-				<script type="text/javascript" src="js/easing.js"></script>
-				<script type="text/javascript">
-						jQuery(document).ready(function($) {
-							$(".scroll, .navbar li a, .footer li a").click(function(event){
-								$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-							});
-						});
-				</script>
+			<script type="text/javascript" src="js/move-top.js"></script>
+			<script type="text/javascript" src="js/easing.js"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function ($) {
+					$(".scroll, .navbar li a, .footer li a").click(function (event) {
+						$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+					});
+				});
+			</script>
 			<!-- //Smooth-Scrolling-JavaScript -->
 
-		<!-- //Custom-JavaScript-File-Links -->
-	<div class="vertical-grid-2" style="width:100%; margin-bottom:50px">
-		<!-- Copyright -->
-		<div class="copyright agileits w3layouts">
-			<p style="font-size:15px"> &copy; 2016 Collective UI Kit. All Rights Reserved | Design by
-				<a href="http://w3layouts.com/" target="_blank"> W3layouts </a>
-			</p>
 		</div>
-		<!-- //Copyright -->
-		<footer style="font-size: 15px; color:white; text-align:center">
-			Copyright Isabel Gonçalves and Mariana Braga - 2018
-			<!-- esta frase vai ficar em todas as paginas -->
-		</footer>
 
+		<!-- //Custom-JavaScript-File-Links -->
+		<div class="vertical-grid-2" style="width:100%; margin-bottom:50px">
+			<!-- Copyright -->
+			<div class="copyright agileits w3layouts">
+				<p style="font-size:15px"> &copy; 2016 Collective UI Kit. All Rights Reserved | Design by
+					<a href="http://w3layouts.com/" target="_blank"> W3layouts </a>
+				</p>
+			</div>
+			<!-- //Copyright -->
+			<footer style="font-size: 15px; color:white; text-align:center">
+				Copyright Isabel Gonçalves and Mariana Braga - 2018
+				<!-- esta frase vai ficar em todas as paginas -->
+			</footer>
+			<!-- logo -->
+			<div>
+				<li>
+					<img src="images/logotipo.png" style="width:60px; display: block; margin-left: auto; margin-right: auto">
+				</li>
+			</div>
+			<!-- //logo -->
+
+		</div>
 	</div>
 
-	
-   
-       
-    </body>
- 
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+</body>
+
 </html>
-         

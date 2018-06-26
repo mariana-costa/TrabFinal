@@ -76,17 +76,21 @@
 		<nav style="width: 100%; text-align: center; margin-top: 0px">
 			<ul>
 				<!-- logo -->
-				<div>
-					<li>
-						<img src="images/logotipo.png" style= "width:60px">
-					</li>
-				</div>
+				<li>
+					<div>
+
+						<img src="images/logotipo.png" style="width:60px; padding-top: 5px">
+
+					</div>
+				</li>
+				<!-- //logo -->
+
 				<li style="float: none; display: inline-block; text-align:center">
 					<div class="item-container" style="width:100%">
 						<form action="/">
 							<div class="item-top aits">Home</div>
 							<div class="item-bottom w3l">
-								<button type="submit" id="btn1">Home</button>
+								<button type="submit" id="btn1" style="cursor: pointer">Home</button>
 							</div>
 						</form>
 					</div>
@@ -97,8 +101,7 @@
 						<form action="/about">
 							<div class="item-top aits">About</div>
 							<div class="item-bottom w3l">
-								<button type="submit" id="btn2">About
-								</button>
+								<button type="submit" id="btn2" style="cursor: pointer">About</button>
 							</div>
 						</form>
 					</div>
@@ -106,10 +109,8 @@
 				</li>
 			</ul>
 		</nav>
-
 		<!-- //Navbar -->
 		<script>
-
 
 
 			document.getElementById("btn1").disabled = false;
@@ -128,8 +129,9 @@
 			document.getElementById("btn2").style.fontFamily = "Arial, Helvetica, sans-serif";
 			document.getElementById("btn2").style.fontSize = "17px";				
 		</script>
+
 		<!-- Vertical-Grids -->
-		<div id="about" style="width:100%; width:1140px; height:600px; background-image: url('images/imgAbout2.jpg'); color: white">
+		<div id="about" style="width:100%; width:1215px; height:600px; background-image: url('images/imgAbout2.jpg'); color: white">
 
 			<!-- Vertical-Grid-1 -->
 			<div>
@@ -163,7 +165,7 @@
 								<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A3300%2F&amp;src=sdkpreparse"
 								 class="fb-xfbml-parse-ignore">Share</a>
 							</div>
-							<!-- Botão de partilha no Facebook -->		
+							<!-- Botão de partilha no Facebook -->
 
 							<p style="font-size:14px; color:black">
 								<br>Isabel and Mariana, Cloudy Team</p>
@@ -175,7 +177,7 @@
 				</div>
 
 
-				
+
 
 				<!-- //File-Upload-Widget -->
 
@@ -253,35 +255,32 @@
 	<script src="js/clndr.js"></script>
 	<script src="js/site.js"></script>
 	<!-- //Calender-JavaScript -->
+			<!-- Slide-To-Top JavaScript -->
+				<script type="text/javascript">
+					$(document).ready(function() {
+						var defaults = {
+							containerID: 'toTop',
+							containerHoverID: 'toTopHover',
+							scrollSpeed: 100,
+							easingType: 'linear',
+						};
+						$().UItoTop({ easingType: 'easeOutQuart' });
+					});
+				</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 0;"> </span></a>
+			<!-- //Slide-To-Top JavaScript -->
 
-	<!-- Slide-To-Top JavaScript -->
-	<script type="text/javascript">
-		$(document).ready(function () {
-			var defaults = {
-				containerID: 'toTop',
-				containerHoverID: 'toTopHover',
-				scrollSpeed: 100,
-				easingType: 'linear',
-			};
-			$().UItoTop({ easingType: 'easeOutQuart' });
-		});
-	</script>
-	<a href="#" id="toTop" style="display: block;">
-		<span id="toTopHover" style="opacity: 0;"> </span>
-	</a>
-	<!-- //Slide-To-Top JavaScript -->
-
-	<!-- Smooth-Scrolling-JavaScript -->
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function ($) {
-			$(".scroll, .navbar li a, .footer li a").click(function (event) {
-				$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
-			});
-		});
-	</script>
-	<!-- //Smooth-Scrolling-JavaScript -->
+			<!-- Smooth-Scrolling-JavaScript -->
+				<script type="text/javascript" src="js/move-top.js"></script>
+				<script type="text/javascript" src="js/easing.js"></script>
+				<script type="text/javascript">
+						jQuery(document).ready(function($) {
+							$(".scroll, .navbar li a, .footer li a").click(function(event){
+								$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+							});
+						});
+				</script>
+			<!-- //Smooth-Scrolling-JavaScript -->
 
 	<!-- //Custom-JavaScript-File-Links -->
 	<div class="vertical-grid-2" style="width:100%; margin-bottom:50px">
@@ -299,12 +298,14 @@
 
 		<!-- logo -->
 		<div>
-				<li>
-					<img src="images/logotipo.png" style= "width:60px; margin-left:560px; margin-top:8px">
-				</li>
+			<li>
+				<img src="images/logotipo.png" style="width:60px; display: block; margin-left: auto; margin-right: auto">
+			</li>
 		</div>
+		<!-- //logo -->
 
 	</div>
 
 </body>
+
 </html>
