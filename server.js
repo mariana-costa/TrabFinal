@@ -14,17 +14,13 @@ var date = new Date().getHours().toString();
 //var iconetime;
 if (date >= 20 || date <= 6) {
     texto7 = "Good evening!";
-    //document.getElementById("iconetime").value = "<img src='images/evening.png' width='128' height='128'>";
 }
 if (date > 6 && date <= 12) {
     texto7 = "Good morning!";
-    //document.getElementById("iconetime").value = "<img src='images/morning.png' width='128' height='128'>";
 }
 if (date > 12 && date < 20) {
     texto7 = "Good afternoon!";
-    //document.getElementById("iconetime").value = "<img src='images/night.png' width='128' height='128'>";
 }
-
 
 var d = new Date();
 var ndia = d.getDay();
@@ -111,7 +107,7 @@ console.log(ndiaHoje);
 
 app.get('/', (request, response) => {
     response.render('index.hbs', {
-        title: "Cloudy",
+        title: "CLOUDY",
         texto7: `${texto7}`
     });
 
@@ -126,8 +122,6 @@ app.get('/weather', (req, resp) => {
     }, (error, response, body) => {
         var lat = body.results[0].geometry.location.lat;
         var lng = body.results[0].geometry.location.lng;
-        //console.log("latitude:"+lat);
-        //console.log("longitude:"+lng);
         var formatted_address = body.results[0].formatted_address;
 
 
@@ -174,7 +168,7 @@ app.get('/weather', (req, resp) => {
             resp.render('meteo.hbs', {
                 texto: req.query.local, textoTempAparente: apparentTemperature, textoHumidade: humidade, textoPrecipitacao: precipitacao, texto8: req.query.local,
                 texto9: SetimoHigh, texto10: SetimoLow, texto11: PrimeiroHigh, texto12: PrimeiroLow, texto13: SegundoHigh, texto14: SegundoLow, texto15: TerceiroHigh, texto16: TerceiroLow,
-                texto17: QuartoHigh, texto18: QuartoLow, texto19: QuintoHigh, texto20: QuintoLow, texto21: SextoHigh, texto22: SextoLow, tempAtual: temperature, info: "It's " + temperature + " ºC, the maximum temperature expected for today is " + PrimeiroHigh + " ºC.",
+                texto17: QuartoHigh, texto18: QuartoLow, texto19: QuintoHigh, texto20: QuintoLow, texto21: SextoHigh, texto22: SextoLow, tempAtual: temperature, info: "Max: " + PrimeiroHigh + " ºC Min: " + PrimeiroLow + " ºC",
                 subtitulo: summary, textoVento: vento, textoUv: uvIndex, textoPressao: pressao, textoVisibilidade: visibilidade, hoje: ndiaHoje, amanha: ndiaAmanha, amanha2: ndiaAmanha2, amanha3: ndiaAmanha3, amanha4: ndiaAmanha4, amanha5: ndiaAmanha5, amanha6: ndiaAmanha6,
                 icone1: icone
             });
@@ -245,7 +239,7 @@ app.get('/getFavorite', (req, resp) => {
             resp.render('meteo.hbs', {
                 texto: req.query.comboBox, textoTempAparente: apparentTemperature, textoHumidade: humidade, textoPrecipitacao: precipitacao, texto8: req.query.comboBox,
                 texto9: SetimoHigh, texto10: SetimoLow, texto11: PrimeiroHigh, texto12: PrimeiroLow, texto13: SegundoHigh, texto14: SegundoLow, texto15: TerceiroHigh, texto16: TerceiroLow,
-                texto17: QuartoHigh, texto18: QuartoLow, texto19: QuintoHigh, texto20: QuintoLow, texto21: SextoHigh, texto22: SextoLow, tempAtual: temperature, info: "It's " + temperature + " ºC, the maximum temperature expected for today is " + PrimeiroHigh + " ºC.",
+                texto17: QuartoHigh, texto18: QuartoLow, texto19: QuintoHigh, texto20: QuintoLow, texto21: SextoHigh, texto22: SextoLow, tempAtual: temperature, info: "Max: " + PrimeiroHigh + " ºC Min: " + PrimeiroLow + " ºC",
                 subtitulo: summary, textoVento: vento, textoUv: uvIndex, textoPressao: pressao, textoVisibilidade: visibilidade, hoje: ndiaHoje, amanha: ndiaAmanha, amanha2: ndiaAmanha2, amanha3: ndiaAmanha3, amanha4: ndiaAmanha4, amanha5: ndiaAmanha5, amanha6: ndiaAmanha6
             });
 

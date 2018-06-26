@@ -84,35 +84,46 @@
 					</div>
 				</li>
 				<!-- //logo -->
+				<div style="float: none; display: inline-block; text-align:center">
+					<li>
+						<div class="item-container" style="width:100%; padding-right: 500px">
+							<form action="/">
+								<div class="item-top aits">Home</div>
+								<div class="item-bottom w3l">
+									<button type="submit" id="btn1" style="cursor: pointer">Home</button>
+								</div>
+							</form>
+						</div>
+					</li>
 
-				<li style="float: none; display: inline-block; text-align:center">
-					<div class="item-container" style="width:100%">
-						<form action="/">
-							<div class="item-top aits">Home</div>
+					<li>
+						<div class="item-container" style="width:100%; padding-right: 200px">
+							<div class="item-top aits">Favorites</div>
 							<div class="item-bottom w3l">
-								<button type="submit" id="btn1" style="cursor: pointer">Home</button>
+								<a class="nav-link js-scroll-trigger" href="/#Favorites">
+									<button type="submit" id="btn3" style="cursor: pointer">Favorites</button>
+								</a>
 							</div>
-						</form>
-					</div>
-				</li>
 
-				<li style="float: none; display: inline-block; text-align:center">
-					<div class="item-container" style="width:100%">
-						<form action="/about">
-							<div class="item-top aits">About</div>
-							<div class="item-bottom w3l">
-								<button type="submit" id="btn2" style="cursor: pointer">About</button>
-							</div>
-						</form>
-					</div>
+						</div>
+					</li>
 
-				</li>
+					<li>
+						<div class="item-container" style="width:100%">
+							<form action="/about">
+								<div class="item-top aits">About</div>
+								<div class="item-bottom w3l">
+									<button type="submit" id="btn2" style="cursor: pointer">About</button>
+								</div>
+							</form>
+						</div>
+
+					</li>
+				</div>
 			</ul>
 		</nav>
 		<!-- //Navbar -->
 		<script>
-
-
 			document.getElementById("btn1").disabled = false;
 			//document.getElementById("btn").style.visibility = "hidden";
 			document.getElementById("btn1").style.backgroundColor = "#191919";
@@ -127,7 +138,15 @@
 			document.getElementById("btn2").style.border = "0px";
 			document.getElementById("btn2").style.color = "#00b5c7";
 			document.getElementById("btn2").style.fontFamily = "Arial, Helvetica, sans-serif";
-			document.getElementById("btn2").style.fontSize = "17px";				
+			document.getElementById("btn2").style.fontSize = "17px";
+
+			document.getElementById("btn3").disabled = false;
+			//document.getElementById("btn").style.visibility = "hidden";
+			document.getElementById("btn3").style.backgroundColor = "#191919";
+			document.getElementById("btn3").style.border = "0px";
+			document.getElementById("btn3").style.color = "#00b5c7";
+			document.getElementById("btn3").style.fontFamily = "Arial, Helvetica, sans-serif";
+			document.getElementById("btn3").style.fontSize = "17px";							
 		</script>
 
 		<!-- Vertical-Grids -->
@@ -255,56 +274,56 @@
 	<script src="js/clndr.js"></script>
 	<script src="js/site.js"></script>
 	<!-- //Calender-JavaScript -->
-			<!-- Slide-To-Top JavaScript -->
-				<script type="text/javascript">
-					$(document).ready(function() {
-						var defaults = {
-							containerID: 'toTop',
-							containerHoverID: 'toTopHover',
-							scrollSpeed: 100,
-							easingType: 'linear',
-						};
-						$().UItoTop({ easingType: 'easeOutQuart' });
-					});
-				</script>
-				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 0;"> </span></a>
-			<!-- //Slide-To-Top JavaScript -->
+	<!-- Slide-To-Top JavaScript -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var defaults = {
+				containerID: 'toTop',
+				containerHoverID: 'toTopHover',
+				scrollSpeed: 100,
+				easingType: 'linear',
+			};
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;">
+		<span id="toTopHover" style="opacity: 0;"> </span>
+	</a>
+	<!-- //Slide-To-Top JavaScript -->
 
-			<!-- Smooth-Scrolling-JavaScript -->
-				<script type="text/javascript" src="js/move-top.js"></script>
-				<script type="text/javascript" src="js/easing.js"></script>
-				<script type="text/javascript">
-						jQuery(document).ready(function($) {
-							$(".scroll, .navbar li a, .footer li a").click(function(event){
-								$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-							});
-						});
-				</script>
-			<!-- //Smooth-Scrolling-JavaScript -->
+	<!-- Smooth-Scrolling-JavaScript -->
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll, .navbar li a, .footer li a").click(function (event) {
+				$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+			});
+		});
+	</script>
+	<!-- //Smooth-Scrolling-JavaScript -->
 
 	<!-- //Custom-JavaScript-File-Links -->
 	<div class="vertical-grid-2" style="width:100%; margin-bottom:50px">
 		<!-- Copyright -->
 		<div class="copyright agileits w3layouts">
-			<p style="font-size:15px"> &copy; 2016 Collective UI Kit. All Rights Reserved | Design by
+			<p style="font-size:12px"> &copy; 2016 Collective UI Kit. All Rights Reserved | Design by
 				<a href="http://w3layouts.com/" target="_blank"> W3layouts </a>
 			</p>
+			<p style="font-size: 12px; color:white; text-align:center; padding-top:10px">
+				Copyright Isabel Gonçalves and Mariana Braga - 2018
+			</p>
+			<!-- logo -->
+			<div>
+				<li>
+					<img src="images/logotipo.png" style="width:60px; display: block; margin-left: auto; margin-right: auto">
+				</li>
+				<p style="font-size: 12px; color:white; text-align:center">CLOUDY Meteorology</p>
+
+			</div>
+			<!-- //logo -->
 		</div>
 		<!-- //Copyright -->
-		<footer style="font-size: 15px; color:white; text-align:center">
-			Copyright Isabel Gonçalves and Mariana Braga - 2018
-			<!-- esta frase vai ficar em todas as paginas -->
-		</footer>
-
-		<!-- logo -->
-		<div>
-			<li>
-				<img src="images/logotipo.png" style="width:60px; display: block; margin-left: auto; margin-right: auto">
-			</li>
-		</div>
-		<!-- //logo -->
-
-	</div>
 
 </body>
 
