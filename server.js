@@ -9,7 +9,6 @@ const request = require('request');
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + "/public")); //o dirname dá sempre o caminho até onde o servidor esta a ser executado. Assim, se houver um pedido para um ficheiro, vai ver a pasta public, se estiver la, serve-o
 
-//cumprimentos
 var date = new Date().getHours().toString();
 
 if (date >= 20 || date <= 6) {
@@ -124,7 +123,6 @@ app.get('/weather', (req, resp) => {
         var lng = body.results[0].geometry.location.lng;
         var formatted_address = body.results[0].formatted_address;
 
-
         //O segundo request tem de estar dentro do primeiro
         request({
             url: `https://api.darksky.net/forecast/${DarkSkyAPIKey}/${lat},${lng}?units=si`,
@@ -148,6 +146,7 @@ app.get('/weather', (req, resp) => {
             console.log("The temperature is: " + temperature);
             console.log("It feels like: " + apparentTemperature);
             console.log(formatted_address);
+
             //Temperaturas Máximas e Minimas do primeiro ao sétimo dia da semana
             var PrimeiroHigh = DSbody.daily.data[0].temperatureMax;
             var PrimeiroLow = DSbody.daily.data[0].temperatureMin;
@@ -164,7 +163,6 @@ app.get('/weather', (req, resp) => {
             var SetimoHigh = DSbody.daily.data[6].temperatureMax;
             var SetimoLow = DSbody.daily.data[6].temperatureMin;
 
-
             resp.render('meteo.hbs', {
                 texto: req.query.local, textoTempAparente: apparentTemperature, textoHumidade: humidade, textoPrecipitacao: precipitacao, texto8: req.query.local,
                 texto9: SetimoHigh, texto10: SetimoLow, texto11: PrimeiroHigh, texto12: PrimeiroLow, texto13: SegundoHigh, texto14: SegundoLow, texto15: TerceiroHigh, texto16: TerceiroLow,
@@ -180,10 +178,6 @@ app.get('/weather', (req, resp) => {
 
 app.get('/getFavorite', (req, resp) => {
     var address = req.query.comboBox;
-    //if (address == undefined) {
-    // resp.send('You don´t have favorites, go back to the home page: http://localhost:3300');
-    // }
-    //else {
     var encodedAddress = encodeURIComponent(address);
     request({
         url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${GoogleAPIKey}`,
@@ -191,10 +185,7 @@ app.get('/getFavorite', (req, resp) => {
     }, (error, response, body) => {
         var lat = body.results[0].geometry.location.lat;
         var lng = body.results[0].geometry.location.lng;
-        //console.log("latitude:"+lat);
-        //console.log("longitude:"+lng);
         var formatted_address = body.results[0].formatted_address;
-
 
         //O segundo request tem de estar dentro do primeiro
         request({
@@ -218,6 +209,7 @@ app.get('/getFavorite', (req, resp) => {
             console.log("The temperature is: " + temperature);
             console.log("It feels like: " + apparentTemperature);
             console.log(formatted_address);
+
             //Temperaturas Máximas e Minimas do primeiro ao sétimo dia da semana
             var PrimeiroHigh = DSbody.daily.data[0].temperatureMax;
             var PrimeiroLow = DSbody.daily.data[0].temperatureMin;
@@ -233,7 +225,6 @@ app.get('/getFavorite', (req, resp) => {
             var SextoLow = DSbody.daily.data[5].temperatureMin;
             var SetimoHigh = DSbody.daily.data[6].temperatureMax;
             var SetimoLow = DSbody.daily.data[6].temperatureMin;
-
 
             resp.render('meteo.hbs', {
                 texto: req.query.comboBox, textoTempAparente: apparentTemperature, textoHumidade: humidade, textoPrecipitacao: precipitacao, texto8: req.query.comboBox,
@@ -253,4 +244,3 @@ app.get('/about', (request, response) => {
 });
 
 app.listen(3300);//escuta a porta 3300, cada computador tem milhares de portas, não pode haver dois serviços a escutar uma porta
-//a porta continua a mesma para todas as rotas
