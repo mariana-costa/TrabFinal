@@ -81,7 +81,7 @@
 							<form action="/">
 								<div class="item-top aits">Home</div>
 								<div class="item-bottom w3l">
-									<button type="submit" id="btn1" style="cursor: pointer">Home</button>
+									<button type="submit" id="btn1" style="cursor: pointer; border: none; outline:none">Home</button>
 								</div>
 							</form>
 						</div>
@@ -92,7 +92,7 @@
 							<div class="item-top aits">Favorites</div>
 							<div class="item-bottom w3l">
 								<a class="nav-link js-scroll-trigger" href="/#Favorites">
-									<button type="submit" id="btn3" style="cursor: pointer">Favorites</button>
+									<button type="submit" id="btn3" style="cursor: pointer; border: none; outline:none">Favorites</button>
 								</a>
 							</div>
 
@@ -104,7 +104,7 @@
 							<form action="/about">
 								<div class="item-top aits">About</div>
 								<div class="item-bottom w3l">
-									<button type="submit" id="btn2" style="cursor: pointer">About</button>
+									<button type="submit" id="btn2" style="cursor: pointer; border: none; outline:none">About</button>
 								</div>
 							</form>
 						</div>
@@ -192,7 +192,7 @@
 							<br>
 							<h2 style="font-size:18px">Save this place in your favorites</h2>
 							<form2>
-								<button class="guardar" type="submit" id="guardar" style="cursor: pointer; background-color:#29a3a3; color:white; border-radius: 8px; font-size: 16px; padding: 10px 16px; border: none; font-weight: 600">Save</button>
+								<button class="guardar" type="submit" id="guardar" style="cursor: pointer; background-color:#29a3a3; color:white; border-radius: 8px; font-size: 16px; padding: 10px 16px; border: none; outline:none; font-weight: 600">Save</button>
 							</form2>
 
 						</div>
@@ -283,7 +283,7 @@
 						cidades.push(city);
 						localStorage.setItem('cidadesFavoritas', JSON.stringify(cidades));
 						console.log(localStorage);
-						window.alert("Your local has been added to your favorites in the Home page")
+						window.alert("This place has been added to your favorites in the Home page")
 					}
 				})
 			</script>
