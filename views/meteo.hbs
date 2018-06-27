@@ -152,11 +152,9 @@
 
 						<div style="text-align:center">
 							<h1 id="cidadeValor" style="font-size:40px">{{texto}}</h1>
+							<h2 id="iconeTempo" style="text-align: center; font-size:25px; font-weight: 400">{{subtitulo}}</h2>
+							<h2 style="text-align: center; font-size:30px; font-weight: 800">{{tempAtual}} ºC</h2>
 
-							<!-- <img src="images/pcloudy.png" id="iconeweather" width="108" height="108"> -->
-							{{!--
-							<div id="iconeTempo" value="{{icone1}}"></div> --}}
-							<h2 style="text-align: center; font-size:25px; font-weight: 600">{{tempAtual}} ºC {{subtitulo}}</h2>
 							<p>{{info}}</p>
 
 							<br>
@@ -203,6 +201,34 @@
 				</div>
 			</div>
 
+			<!-- include jQuery library -->
+			<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			 crossorigin="anonymous"></script>
+
+			<script>
+				var valor = $("#iconeTempo").html();
+				console.log(valor);
+				if (valor == "Partly Cloudy") {
+					$("#iconeTempo").html('<img src="images/pcloudy.png" id="iconeweather" width="88" height="88"><br>' + valor);
+				}
+				if (valor == "Clear") {
+					$("#iconeTempo").html('<img src="images/sun.png" id="iconeweather" width="88" height="88"><br>' + valor);
+				}
+				if (valor == "Mostly Cloudy" || valor == "Humid and Mostly Cloudy" || valor == "Overcast") {
+					$("#iconeTempo").html('<img src="images/cloudy.png" id="iconeweather" width="88" height="88"><br>' + valor);
+				}
+
+				if (valor == "Drizzle" || valor == "Light Rain") {
+					$("#iconeTempo").html('<img src="images/drizzle.png" id="iconeweather" width="88" height="88"><br>' + valor);
+				}
+
+				if (valor == "Foggy") {
+					$("#iconeTempo").html('<img src="images/foggy.png" id="iconeweather" width="88" height="88"><br>' + valor);
+				}
+
+
+			</script>
+
 			<script>
 				var insert;
 
@@ -223,9 +249,7 @@
 			</script>
 
 
-			<!-- include jQuery library -->
-			<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			 crossorigin="anonymous"></script>
+
 
 			<script>
 

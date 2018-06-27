@@ -11,7 +11,7 @@ app.use(express.static(__dirname + "/public")); //o dirname dá sempre o caminho
 
 //cumprimentos
 var date = new Date().getHours().toString();
-//var iconetime;
+
 if (date >= 20 || date <= 6) {
     texto7 = "Good evening!";
 }
@@ -68,7 +68,7 @@ if (ndia == 3) {
     ndiaAmanha = "Thursday"
     ndiaAmanha2 = "Friday"
     ndiaAmanha3 = "Saturday"
-    ndiaAmanha4 = "Domimgo"
+    ndiaAmanha4 = "Sunday"
     ndiaAmanha5 = "Monday"
     ndiaAmanha6 = "Tuesday"
 }
@@ -88,7 +88,7 @@ if (ndia == 5) {
     ndiaAmanha6 = "Saturday"
     ndiaAmanha = "Sunday"
     ndiaAmanha2 = "Monday"
-    ndiaAmanha3 = "Trça"
+    ndiaAmanha3 = "Tuesday"
     ndiaAmanha4 = "Wednesday"
     ndiaAmanha5 = "Thursday"
 }
@@ -169,8 +169,7 @@ app.get('/weather', (req, resp) => {
                 texto: req.query.local, textoTempAparente: apparentTemperature, textoHumidade: humidade, textoPrecipitacao: precipitacao, texto8: req.query.local,
                 texto9: SetimoHigh, texto10: SetimoLow, texto11: PrimeiroHigh, texto12: PrimeiroLow, texto13: SegundoHigh, texto14: SegundoLow, texto15: TerceiroHigh, texto16: TerceiroLow,
                 texto17: QuartoHigh, texto18: QuartoLow, texto19: QuintoHigh, texto20: QuintoLow, texto21: SextoHigh, texto22: SextoLow, tempAtual: temperature, info: "Max: " + PrimeiroHigh + " ºC Min: " + PrimeiroLow + " ºC",
-                subtitulo: summary, textoVento: vento, textoUv: uvIndex, textoPressao: pressao, textoVisibilidade: visibilidade, hoje: ndiaHoje, amanha: ndiaAmanha, amanha2: ndiaAmanha2, amanha3: ndiaAmanha3, amanha4: ndiaAmanha4, amanha5: ndiaAmanha5, amanha6: ndiaAmanha6,
-                icone1: icone
+                subtitulo: summary, textoVento: vento, textoUv: uvIndex, textoPressao: pressao, textoVisibilidade: visibilidade, hoje: ndiaHoje, amanha: ndiaAmanha, amanha2: ndiaAmanha2, amanha3: ndiaAmanha3, amanha4: ndiaAmanha4, amanha5: ndiaAmanha5, amanha6: ndiaAmanha6
             });
 
         });

@@ -382,7 +382,7 @@
 						<div class="dmy">
 							<div>
 								<br>
-								<h1 style="font-size:40px">{{texto7}}</h1>
+								<h1 id="iconeHora" style="font-size:40px">{{texto7}}</h1>
 							</div>
 
 							<script type="text/javascript">
@@ -408,6 +408,28 @@
 
 				</div>
 				<!-- //Current-Weather-Widget -->
+				
+				<!-- include jQuery library -->
+				<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+				 crossorigin="anonymous"></script>
+
+
+				<script>
+					var valor = $("#iconeHora").html();
+					console.log(valor);
+					if (valor == "Good morning!") {
+						$("#iconeHora").html('<img src="images/morning.png" id="iconeweather" width="88" height="88"><br>' + valor);
+					}
+					if (valor == "Good afternoon!") {
+						$("#iconeHora").html('<img src="images/afternoon.png" id="iconeweather" width="88" height="88"><br>' + valor);
+					}
+					if (valor == "Good evening!") {
+						$("#iconeHora").html('<img src="images/evening.png" id="iconeweather" width="88" height="88"><br>' + valor);
+					}
+
+
+				</script>
+
 
 				<!-- File-Upload-Widget -->
 				<div class="upload">
@@ -437,9 +459,7 @@
 						</form>
 					</div>
 
-					<!-- include jQuery library -->
-					<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-					 crossorigin="anonymous"></script>
+					
 
 					<script>
 						$(document).ready(function () { //o código desta função é corrido quando a página carrega
